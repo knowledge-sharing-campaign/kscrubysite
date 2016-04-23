@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo puma -d -p 80 config.ru || true
+sudo /usr/local/bin/puma -d -p 80 config.ru || true
