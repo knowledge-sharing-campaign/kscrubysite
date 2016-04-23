@@ -16,7 +16,6 @@ Development requirements
 --------------------------------
 > - Install ruby on rails
 > - gem install bundler
-> - gem install puma
 
 Running
 ----------
@@ -26,5 +25,12 @@ Running
 > - run the following commands (will use *3000* port by default)
     - ``` rails server ```
 
+Contributing
+-------------
+> - clone this repo using ``` git clone https://github.com/knowledge-sharing-campaign/kscrubysite ```
+> - make changes
+> - run ``` git pull --rebase ```
+> - run ``` git add . ```
+> - run ``` git push ```
 
 -- The KSC Team
