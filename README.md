@@ -19,8 +19,6 @@ Development requirements
 
 Running
 ----------
-> - Clone this repo using ``` git clone https://github.com/knowledge-sharing-campaign/kscrubysite ```
-> - Go inside the site folder using ``` cd site ```
 > - run ``` sudo bundle install ```
 > - run the following commands (will use *3000* port by default)
     - ``` rails server ```
