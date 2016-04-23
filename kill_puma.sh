@@ -1,4 +1,3 @@
 #!/bin/bash
 
-sudo pkill puma
-return 0
+sudo pkill puma || true
