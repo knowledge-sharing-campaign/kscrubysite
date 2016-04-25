@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
-  get '/welcome' => 'welcome#index'
+  root 'welcome#home'
+
+  get '/aboutus' => 'welcome#aboutus'
+  get '/charles' => 'welcome#charles'
+  get '/contactus' => 'welcome#contactus'
+  get '/events' => 'welcome#events'
+  get '/forgotpassword' => 'welcome#forgotpassword'
+  get '/forum' => 'welcome#forum'
+  get '/gallery' => 'welcome#gallery'
+  get '/login' => 'welcome#login'
+  get '/partners' => 'welcome#partners'
+  get '/privacy' => 'welcome#privacy'
+  get '/rahul' => 'welcome#rahul'
+  get '/register' => 'welcome#register'
+  get '/registration' => 'welcome#registration'
+  get '/registrationsuccessful' => 'welcome#registrationsuccessful'
+  get '/slider' => 'welcome#slider'
+  get '/termscons' => 'welcome#termscons'
+  get '/upcomingevents' => 'welcome#upcomingevents'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,4 +73,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  match ':controller(/:action(/:id))', :via => :get
 end
