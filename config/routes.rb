@@ -1,32 +1,29 @@
 Rails.application.routes.draw do
 
-  #resources :users
+    get '/register' => 'main#register'
+    post '/register' => 'main#registersuccess'
+    get '/welcome' => 'main#welcome'
 
-  get '/home' => 'users#home'
-  get '/login' => 'users#login'
-  post '/login' => "users#processlogin"
-  post '/' => 'users#create'
-  
-  root 'main#register'
+    get '/home' => 'main#home'
+    get '/aboutus' => 'main#aboutus'
+    get '/charles' => 'main#charles'
+    get '/contactus' => 'main#contactus'
+    get '/events' => 'main#events'
+    get '/forgotpassword' => 'main#forgotpassword'
+    get '/forum' => 'main#forum'
+    get '/gallery' => 'main#gallery'
 
-  #get '/aboutus' => 'welcome#aboutus'
-  #get '/charles' => 'welcome#charles'
-  #get '/contactus' => 'welcome#contactus'
-  #get '/events' => 'welcome#events'
-  #get '/forgotpassword' => 'welcome#forgotpassword'
-  #get '/forum' => 'welcome#forum'
-  #get '/gallery' => 'welcome#gallery'
-  #get '/login' => 'welcome#login'
-  #get '/partners' => 'welcome#partners'
-  #get '/privacy' => 'welcome#privacy'
-  #get '/rahul' => 'welcome#rahul'
-  #get '/register' => 'welcome#register'
+    get '/partners' => 'main#partners'
+    get '/privacy' => 'main#privacy'
+    get '/rahul' => 'main#rahul'
 
-  #get '/registrationsuccessful' => 'welcome#registrationsuccessful'
-  #get '/slider' => 'welcome#slider'
-  #get '/termscons' => 'welcome#termscons'
-  #get '/upcomingevents' => 'welcome#upcomingevents'
 
+    #get '/registersuccess' => 'main#registersuccess'
+    get '/slider' => 'main#slider'
+    get '/termscons' => 'main#termscons'
+    #get '/upcomingevents' => 'main#upcomingevents'
+
+    root 'main#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -81,5 +78,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  #match ':controller(/:action(/:id))', :via => :get
+  resource :session, only:[:new, :create, :destroy]
 end
