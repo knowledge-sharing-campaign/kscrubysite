@@ -1,0 +1,85 @@
+<% if cookies[:saved_user] %>
+Thanks you for signing up
+<% else %>
+<%= form_for :user do |f| %>
+ <div class="field">
+    <%= f.label :'First name' %><br>
+    <%= f.text_field :first_name, placeholder: 'First name' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Last Name' %><br>
+    <%= f.text_field :last_name, placeholder: 'Last name' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Email ID' %><br>
+    <%= f.password_field :email, placeholder: 'Email ID' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Username' %><br>
+    <%= f.password_field :username, placeholder: 'Username' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Password' %><br>
+    <%= f.password_field :password, placeholder: '8 characteres minimium and at least one symbol' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Confirm Password' %><br>
+    <%= f.password_field :cpassword, placeholder: 'Should contain 8 characteres minimium and at least one symbol' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Contact Number' %><br>
+    <%= f.password_field :c_number, placeholder: 'Contact number' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Gender' %><br>
+    <%= f.select :gender, [["Male",1], ["Female",2], ["Other",3]], prompt: "Gender" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Date of birth' %><br>
+    <%= f.date_select :dob, placeholder: 'DD/MM/YY' %>
+  </div>
+
+ <div class="field">
+    <%= f.label :'Current address' %><br>
+    <%= f.text_area :curr_address, placeholder: 'Current Address' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Permanent address' %><br>
+    <%= f.text_area :perm_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.country_select :country %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :university %><br>
+    <%= f.text_field :university %>
+  </div>
+  <div class="field">
+    <%= f.label :course %><br>
+    <%= f.text_field :course %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+<% end %>

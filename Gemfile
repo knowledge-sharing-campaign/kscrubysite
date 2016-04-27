@@ -43,3 +43,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'puma'
+gem 'country_select'
+gem 'spring'
+gem 'bootstrap-sass'
