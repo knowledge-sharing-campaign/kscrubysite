@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
 
   attr_accessor :tos
-  validates :tos, acceptance: true 
+  validates :tos, acceptance: true
 
 
   EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
