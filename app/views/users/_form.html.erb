@@ -1,7 +1,4 @@
-
-  <%= form_for :user, url: '/users' do |f| %>
-
-
+<%= form_for :user, url: '/users' do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
@@ -12,29 +9,27 @@
       </ul>
     </div>
   <% end %>
-
-
- <div class="field">
-   <%= f.label :first_name, "First Name" %><br>
-   <%= f.text_field :first_name, placeholder: "First Name" %>
- </div><br>
- <div class="field">
-   <%= f.label :last_name, "Last Name" %><br>
-   <%= f.text_field :last_name, placeholder: "Last Name" %>
- </div><br>
- <div class="field">
-   <%= f.label :email, "Email ID" %><br>
-   <%= f.text_field :email, placeholder: "Email ID" %>
- </div><br>
- <div class="field">
-   <%= f.label :username, "Username" %><br>
-   <%= f.text_field :username, placeholder: "Username" %>
- </div><br>
- <div class="field">
-   <%= f.label :password, "Password" %><br>
-   <%= f.password_field :password, placeholder: 'minimum 8 characters minimium' %>
- </div><br>
- <div class="field">
+  <div class="field">
+    <%= f.label :first_name, "First Name" %><br>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :last_name, "Last Name" %><br>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :email, "Email ID" %><br>
+    <%= f.text_field :email, placeholder: "Email ID" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :username, "Username" %><br>
+    <%= f.text_field :username, placeholder: "Username" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :password, "Password" %><br>
+    <%= f.password_field :password, placeholder: 'minimum 8 characters minimium' %>
+  </div><br>
+  <div class="field">
     <%= f.label :cpassword, 'Confirm Password' %><br>
     <%= f.password_field :cpassword, placeholder: 'minimum 8 characters minimium' %>
   </div><br>
@@ -52,7 +47,8 @@
   </div><br>
   <div class="field">
     <%= f.label :dob, "Date of Birth" %><br>
-     <%= f.text_field :dob, class: 'date-picker', placeholder: 'DD/MM/YYYY' %>
+
+    <%= f.text_field :dob, class: 'date-picker', placeholder: 'dd/mm/yyyy' %>
   </div><br>
 
 
@@ -60,6 +56,7 @@
     <%= f.label :curr_address, "Current Address" %><br>
     <%= f.text_field :curr_address, placeholder: "Current Address" %><br>
     <%= check_box_tag :copy_address %><%= label_tag :copy_address, "Same as permanent address" %>
+
   </div><br>
 
   <div class="permanent">
@@ -87,16 +84,17 @@
 
 
   <div class="field">
+    <!--<%= f.label :source, 'How Did You Hear About Us' %><br>
+      <%= f.select :source, [["Internet Ad","Internet Ad"], ["Google Search","Google Search"], ["Other","Other"]], prompt: "-------------------------" %>-->
+      <%= f.label :'How did you get to know about KSC' %><br>
+      <%= f.radio_button :source, 'Friends'%> Friends
+      <%= f.radio_button :source, 'Social Media' %> Social
+      <%= f.radio_button :source, 'Internet Search' %> Internet Search
+      <%= f.radio_button :source, 'Internet Ad' %> Internet Ad
+      <%= f.radio_button :source, 'Unknown' %> Unknown
+      <%= f.radio_button :source, 'Other' %> Other
 
-    <%= f.label :'How did you get to know about KSC' %><br><br>
-    <%= f.radio_button :source, 'Friends'%> Friends
-    <%= f.radio_button :source, 'Social Media' %> Social
-    <br><%= f.radio_button :source, 'Internet Search' %> Internet Search
-    <%= f.radio_button :source, 'Internet Ad' %> Internet Ad
-    <br><%= f.radio_button :source, 'Unknown' %> Unknown
-    <%= f.radio_button :source, 'Other' %> Other
-
-    <%= f.text_field :source %>
+      <%= f.text_field :source %>
   </div><br>
 
   <div class ="field">
