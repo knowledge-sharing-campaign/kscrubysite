@@ -8,13 +8,13 @@ one:
   password: MyString
   c_number: MyString
   gender: MyString
-  dob: MyString
+  dob: 2016-04-29 07:36:15
   curr_address: MyString
   perm_address: MyString
   country: MyString
   city: MyString
-  university: MyString
   course: MyString
+  university: MyString
   source: MyString
 
 two:
@@ -25,11 +25,11 @@ two:
   password: MyString
   c_number: MyString
   gender: MyString
-  dob: MyString
+  dob: 2016-04-29 07:36:15
   curr_address: MyString
   perm_address: MyString
   country: MyString
   city: MyString
-  university: MyString
   course: MyString
+  university: MyString
   source: MyString

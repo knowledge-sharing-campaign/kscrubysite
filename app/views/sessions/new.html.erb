@@ -1,15 +1,28 @@
 <h1>Login</h1>
-<%= form_tag('/session', method: :post) %>
-<pre>
-  <label>
-    Email
-    <input type="email" name="email" />
-  </label>
-  <label>
-    Password
-    <input type="password" name="password" />
-  </label>
+<div>
+  <% if flash[:alert] %>
+  <p id = "notice" ><%= flash[:alert] %> </p>
+  <% end %>
 
-  <input type="submit" value="Login" />
-</pre>
-</form>
+  <%= form_tag :session do %>
+  
+  <div>
+    <div class="field">
+      <%= label_tag :username, "Username or Email" %><br>
+      <%= text_field_tag :username, nil, placeholder: "Username or Email" %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password, "Password" %><br>
+      <%= password_field_tag :password, nil, placeholder: "Password" %>
+    </div>
+
+
+
+  </div>
+  <div>
+    <%= submit_tag "Login" %>
+  </div>
+</fieldset>
+<% end %>
+</div>

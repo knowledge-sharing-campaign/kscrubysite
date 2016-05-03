@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use Unicorn as the app server
+# gem 'unicorn'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -39,10 +42,23 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+gem 'dotenv-rails', :groups => [:development, :test]
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'puma'
 gem 'country_select'
 gem 'spring'
 gem 'bootstrap-sass'
+gem 'rails-footnotes'
+gem 'country_state_select'
+gem 'chosen-rails'
+gem 'city-state'
+gem 'compass-rails'
+#gem 'simple_form'
+gem 'pry'
+gem 'rspec'
+gem 'bootstrap-datepicker-rails'
+gem 'jquery-ui-rails'
+
+
+gem "recaptcha", require: "recaptcha/rails"
+

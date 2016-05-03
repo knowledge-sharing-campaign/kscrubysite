@@ -1,4 +1,5 @@
 module SessionsHelper
+
   def login(email)
     session[:email] = email
   end
@@ -10,5 +11,5 @@ module SessionsHelper
   def current_user
     session[:email]
   end
-  
+
 end

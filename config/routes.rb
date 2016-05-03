@@ -1,34 +1,38 @@
 Rails.application.routes.draw do
 
-    get '/register' => 'main#register'
-    post '/register' => 'main#registersuccess'
-    get '/welcome' => 'main#welcome'
+  get 'termscons' => 'users#termscons'
+  get 'new' => 'users#registersuccess'
 
-    get '/home' => 'main#home'
-    get '/aboutus' => 'main#aboutus'
-    get '/charles' => 'main#charles'
-    get '/contactus' => 'main#contactus'
-    get '/events' => 'main#events'
-    get '/forgotpassword' => 'main#forgotpassword'
-    get '/forum' => 'main#forum'
-    get '/gallery' => 'main#gallery'
+  get '/index' => 'users#index'
+  get '/aboutus' => 'users#aboutus'
+  get '/charles' => 'users#charles'
+  get '/contactus' => 'users#contactus'
+  get '/events' => 'users#events'
+  
+  get '/forum' => 'users#forum'
+  get '/gallery' => 'users#gallery'
 
-    get '/partners' => 'main#partners'
-    get '/privacy' => 'main#privacy'
-    get '/rahul' => 'main#rahul'
+  get '/partners' => 'users#partners'
+  get '/privacy' => 'users#privacy'
+  get '/rahul' => 'users#rahul'
 
 
-    #get '/registersuccess' => 'main#registersuccess'
-    get '/slider' => 'main#slider'
-    get '/termscons' => 'main#termscons'
-    #get '/upcomingevents' => 'main#upcomingevents'
 
-    root 'main#home'
+
+
+  resources :users, only:[:new, :create, :show]
+
+  resource :welcome, only:[:new]
+
+  resource :session, only: [:new, :create, :destroy]
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -78,5 +82,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resource :session, only:[:new, :create, :destroy]
 end

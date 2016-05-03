@@ -3,17 +3,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    if @user.save
-      login params[:email]
-      redirect_to '/welcome'
+    user = User.where('username = :e OR email = :e', e: params[:username]).first
+    if user && user.password == params[:password]
+      session[:user_id] = user.id
+      redirect_to user_path(user)
     else
-      flash[:danger] = 'your have not filed your details'
-      render :register
+      redirect_to new_session_path, alert: "Invalid username or password"
     end
   end
 
   def destroy
-    redirect_to root_path
+    logout
+    session[:user_id] = nil
+    redirect_to '/index', alert: "You Successfully signed out"
   end
 end
