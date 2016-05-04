@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 
+<body>
 <header>
   <div id="langbar" align="right">
       <select>
@@ -31,11 +32,11 @@
 </header>
 
 
-<body>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
-</body>
 
 <footer align="center">
    <ls>
@@ -68,5 +69,6 @@
    <br>
 </footer>
 
+</body>
 
 </html>

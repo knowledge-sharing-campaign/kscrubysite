@@ -9,14 +9,16 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :first_name, "First Name" %><br>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
-  </div><br>
-  <div class="field">
-    <%= f.label :last_name, "Last Name" %><br>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div><br>
+  <div class="row">
+    <div class="col-xs-6">
+      <%= f.label :first_name, "First Name" %><br>
+      <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>
+    </div>
+    <div class="col-xs-6">
+      <%= f.label :last_name, "Last Name" %><br>
+      <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
+    </div>
+  </div>
   <div class="field">
     <%= f.label :email, "Email ID" %><br>
     <%= f.text_field :email, placeholder: "Email ID" %>
