@@ -1,15 +1,15 @@
 module SessionsHelper
 
-  def login(email)
-    session[:email] = email
+  def login(id)
+    session[:user_id] = id
   end
 
   def logout
-    session.delete[:email]
+    session.delete[:user_id]
   end
 
   def current_user
-    session[:email]
+    session[:user_id]
   end
 
 end
