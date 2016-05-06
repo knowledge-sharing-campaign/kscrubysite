@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       :username,
       :password,
       :password_confirmation,
-      :c_number,
+      :contact_number,
       :gender,
       :dob,
       :curr_address,
