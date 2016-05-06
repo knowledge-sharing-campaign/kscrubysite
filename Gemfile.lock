@@ -252,10 +252,11 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   sqlite3
+  therubyracer
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.1
+   1.12.2
