@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to '/index', alert: "You Successfully signed out"
+    redirect_to root_path, alert: "You Successfully signed out"
   end
 end
