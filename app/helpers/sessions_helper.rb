@@ -12,4 +12,13 @@ module SessionsHelper
     session[:user_id]
   end
 
+  def user_signed_in?
+    current_user.present?
+  end
+
+  def authorize_user
+    if(!user_signed_in?)
+      redirect_to new_session_path, alert: 'You need to login to access that page.'
+    end
+  end
 end

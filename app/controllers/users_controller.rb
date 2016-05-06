@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
 
-  def index
-    @users = User.all
-  end
+  before_action :authorize_user, only: :show
 
   def new
     @user = User.new
@@ -10,13 +8,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-      if verify_recaptcha(model: @user) && @user.save
-        login params[:username]
-        redirect_to user_path(@user)
-      else
-        flash[:danger] = 'You have not filled your details.'
-        render :new
-      end
+    if verify_recaptcha(model: @user) && @user.save
+      login params[:username]
+      redirect_to user_path(@user)
+    else
+      flash[:danger] = 'You have not filled your details.'
+      render :new
     end
   end
 
@@ -43,4 +40,5 @@ class UsersController < ApplicationController
       :university,
       :source
     )
+  end
 end
