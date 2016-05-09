@@ -16,7 +16,7 @@ Tech Stack
 
 Development requirements
 --------------------------------
-> - Install ruby 
+> - Install ruby
 
 Running
 ----------
@@ -30,7 +30,7 @@ Running
         - ``` sudo ./ksc -restart ```
     - *For development mode*
         - ``` sudo rails server -dev```
-        - ``` sudo ./ksc -stop -dev``` 
+        - ``` sudo ./ksc -stop -dev```
 
 Developing
 --------------
