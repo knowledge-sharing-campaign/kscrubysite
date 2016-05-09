@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
   get 'termscons' => 'users#termscons'
-  get 'new' => 'users#registersuccess'
+  get 'registersuccess' => 'users#registersuccess'
 
   get '/index' => 'users#index'
   get '/aboutus' => 'users#aboutus'
   get '/charles' => 'users#charles'
   get '/contactus' => 'users#contactus'
   get '/events' => 'users#events'
-  
+
   get '/forum' => 'users#forum'
   get '/gallery' => 'users#gallery'
 

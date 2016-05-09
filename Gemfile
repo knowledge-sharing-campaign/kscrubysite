@@ -42,7 +42,7 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
-gem 'dotenv-rails', :groups => [:development, :test]
+#gem 'dotenv-rails', :groups => [:development, :test]
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'country_select'
@@ -60,5 +60,4 @@ gem 'bootstrap-datepicker-rails'
 gem 'jquery-ui-rails'
 
 
-gem "recaptcha", require: "recaptcha/rails"
-
+#gem "recaptcha", require: "recaptcha/rails"

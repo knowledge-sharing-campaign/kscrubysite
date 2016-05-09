@@ -16,19 +16,41 @@
           <option value="French">French</option>
       </select>
   </div>
-  <div id="menu" class="clear">
-      <a href="/">
-          <div class="logo"><!--<img height="4%" src="/static/images/ksclogo3.png" alt="logo">--></div>
-      </a>
-      <ul align="center" id="bar">
-          <li><a href="/index">HOME</a></li>
-          <li><a href="/aboutus">ABOUT US</a></li>
-          <li><a href="/forum">FORUM</a></li>
-          <li><a href="/events">EVENTS</a></li>
-          <li><a href="/gallery">GALLERY</a></li>
-          <div class="log_in_log_out_registration"><%= image_tag "add_user.png" %></div>
-      </ul>
-  </div>
+  <nav class="navbar st-navbar navbar-fixed-top animated bounce">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#st-navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+				    	<span class="icon-bar"></span>
+				    	<span class="icon-bar"></span>
+				    	<span class="icon-bar"></span>
+					</button>
+					<a class="logo" href="index.html"></a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="st-navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+          				    	<li><a href="/index" class="active">HOME</a></li>
+                        <li><a href="/aboutus">ABOUT US</a></li>
+
+                        <li><a href="/forum">FORUM</a></li>
+                        <li><a href="/events">EVENTS</a></li>
+
+                        <li><a href="/gallery">GALLERY</a></li>
+
+                     <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x" aria-hidden="true"></i> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/session/new" data-toggle="modal" data-target="/session/new">Log in</a></li>
+                 <li><a href="/users/new" data-toggle="modal" data-target="/users/ne">Register</a></li>
+
+
+              </ul>
+            </li>
+          </ul>
+
+
+		</nav>
 </header>
 
 

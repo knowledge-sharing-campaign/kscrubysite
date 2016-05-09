@@ -8,9 +8,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if verify_recaptcha(model: @user) && @user.save
+    if @user.save
+    #if verify_recaptcha(model: @user) && @user.save
       login @user.id
-      redirect_to user_path(@user)
+      #redirect_to user_path(@user)
+      redirect_to '/registersuccess'
     else
       flash[:danger] = 'You have not filled your details.'
       render :new
