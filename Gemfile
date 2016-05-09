@@ -61,4 +61,3 @@ gem 'jquery-ui-rails'
 
 
 gem "recaptcha", require: "recaptcha/rails"
-
