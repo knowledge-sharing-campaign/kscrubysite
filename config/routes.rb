@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'termscons' => 'users#termscons'
   get 'registersuccess' => 'users#registersuccess'
 
-  get '/index' => 'users#index'
+  #get '/index' => 'users#index'
   get '/aboutus' => 'users#aboutus'
   get '/charles' => 'users#charles'
   get '/contactus' => 'users#contactus'
