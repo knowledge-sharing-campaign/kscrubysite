@@ -56,8 +56,8 @@
                     <%= f.password_field :password, placeholder: '8 characters minimum and atleast one symbol', class: 'form-control' %>
                   </div>
                   <div class="col-xs-6">
-                    <%= f.label :cpassword, 'Confirm Password' %><br>
-                    <%= f.password_field :cpassword, placeholder: 'should contain 8 characters and atleast one symbol', class: 'form-control' %>
+                    <%= f.label :password_confirmation, 'Confirm Password' %><br>
+                    <%= f.password_field :password_confirmation, placeholder: 'should contain 8 characters and atleast one symbol', class: 'form-control' %>
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@
                 <div class="row">
                   <div class="col-xs-4">
                     <%= f.label :country, "country" %><br>
-                    <%= f.country_select :country %>
+                    <%= f.country_select :country, {}, class: "form-control" %>
                   </div>
                 </div>
               </div>
