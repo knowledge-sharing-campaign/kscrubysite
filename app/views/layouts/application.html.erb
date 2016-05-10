@@ -41,10 +41,12 @@
                      <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x" aria-hidden="true"></i> <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/session/new" data-toggle="modal" data-target="/session/new">Log in</a></li>
-                 <li><a href="/users/new" data-toggle="modal" data-target="/users/ne">Register</a></li>
-
-
+                <% if(user_signed_in?) %>
+                  <li><%= link_to "Log out", session_path, method: :delete %></li>
+                <% else %>
+                  <li><a href="/session/new" data-toggle="modal" data-target="/session/new">Log in</a></li>
+                  <li><a href="/users/new" data-toggle="modal" data-target="/users/ne">Register</a></li>
+                <% end %>
               </ul>
             </li>
           </ul>

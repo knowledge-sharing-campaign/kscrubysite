@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    #@user = nil
     redirect_to root_path, alert: "You Successfully signed out"
   end
 end
