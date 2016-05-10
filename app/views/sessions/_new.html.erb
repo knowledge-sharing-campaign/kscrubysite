@@ -19,8 +19,21 @@
         <%= password_field_tag :password, nil, placeholder: "Password", class: 'form-control' %>
       </div>
 
+      <div class="form-group">
+        <%= label_tag :Stay_logged_in, class: "checkbox inline form-control " do %>
+        <%= check_box_tag :Stay_logged_in %>
+        <span> Stay Logged in </span>
+        <% end %>
+
+      </div>
+
       <%= submit_tag "Login", class: 'btn btn-primary btn-lg' %>
+
+      <p> <%= link_to "New User ? Register now", :controller => :users, :action => :new %></p>
+
+      <p> <%= link_to "Forgotten password ?" %> </p>
       <% end %>
     </div>
   </div>
+
 </div>

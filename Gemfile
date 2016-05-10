@@ -61,3 +61,4 @@ gem 'jquery-ui-rails'
 
 
 gem "recaptcha", require: "recaptcha/rails"
+gem 'coffee-script-source', '1.8.0'
