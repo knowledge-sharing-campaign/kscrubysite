@@ -1,47 +1,74 @@
 
-<div class="modal-dialog modal-lg">
-  <div class="row modal-content">
+<div>
+  <% if flash[:alert] %>
+  <p id = "notice" ><%= flash[:alert] %> </p>
+  <% end %>
 
-    <%= form_tag :session do %>
+  <%= form_tag :session do %>
+
+  <div class="modal-dialog modal-lg">
+    <div class="row modal-content">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h4 class="modal-title form-signin-heading">Login</h4>
-    </div>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title form-signin-heading">Login</h4>
+        </div>
 
-    <div class="col-md-8" >
+        <div class="col-md-8" >
 
-      <% if flash[:alert] %>
-      <p id = "notice" ><%= flash[:alert] %> </p>
-      <% end %>
-      <div class="tab-pane active" id="Login">
-        <form role="form" class="form-horizontal">
-          <div class="form-group">
-            <div class="row">
-              <div class="col-xs-6">
-                <%= label_tag :username, "Username or Email" %><br>
-                <%= text_field_tag :username, nil, placeholder: "Username or Email", class: 'form-control' %>
+        <div class="tab-pane active" id="Login">
+           <form role="form" class="form-horizontal">
+
+             <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <%= label_tag :username, " Username or Email ID" %><br>
+                    <%= text_field_tag :username, nil, placeholder: "Username or Email ID", class: 'form-control' %>
+                  </div>
+                </div>
               </div>
+
+             <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <%= label_tag :password, "Password" %><br>
+                    <%= password_field_tag :password, nil,  placeholder: "Password", class: 'form-control' %>
+                  </div>
+                </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-xs-6">
-                <%= label_tag :password, "Password" %><br>
-                <%= password_field_tag :password, nil, placeholder: "Password", class: 'form-control' %>
-              </div>
-            </div><br>
-          </div>
-          <div class="row">
-            <div class="col-xs-4">
-              <%= submit_tag "Login", class: 'btn btn-primary btn-block btn-lg' %>
+
+             
+                <div class="row">
+                  <div class="col-sm-6">
+                    <%= label_tag :Stay_logged_in, class: "checkbox inline form-control " do %>
+                    <%= check_box_tag :Stay_logged_in %>
+                    <span> Stay Logged in </span>
+                    <% end %>
+
+                  </div>
+                </div>
+           
+              <div>
+                <%= submit_tag "Login" ,class:"btn btn-primary "%>
+              </div><br>
+
+                  <p> <%= link_to "New User ? Register now", :controller => :users, :action => :new %></p>
+                  
+
+                  <p> <%= link_to "Forgotten password ?" %> </p>
+
+
+              </form>
+
             </div>
-          </div><br>
 
-        </form>
-      </div>
-    </div>
 
-    <% end %>
-  </div>
+            </div>
+
+            </div>
+            </div>
+
+</fieldset>
+<% end %>
 </div>
+
