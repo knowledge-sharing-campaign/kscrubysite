@@ -6,15 +6,15 @@ class User < ActiveRecord::Base
 
 
   EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-  NAME_REGEX = /\A\[a-z' ]+\z/i
+  NAME_REGEX = /\A\[A-Z][a-z][A-Za-z]/
   USERNAME_REGEX= /\A[a-z0-9-]\z/
 
 
   validates :first_name, presence: true, format: { with: NAME_REGEX, message: "can have only characters"}
 
-  validates :last_name, presence: true
+  validates :last_name, presence: true, format: { with: NAME_REGEX, message: "can have only characters"}
 
-  validates_uniqueness_of :email, presence: true, uniqueness: true, :format => EMAIL_REGEX
+  validates_uniqueness_of :email, presence: true, uniqueness: true, format: { with: EMAIL_REGEX, message: "invalid email format try "}
 
   validates_uniqueness_of :username, presence: true, uniqueness: true
 

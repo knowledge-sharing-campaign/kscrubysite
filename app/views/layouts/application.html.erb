@@ -56,12 +56,22 @@
             </li>
             <% else %>
             <li><a href="#" data-toggle="modal" data-target="#login-modal">Log in</a></li>
-            <li><a href="/users/new" data-toggle="modal" data-target="/users/ne">Register</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#register-modal">Register</a></li>
             <% end %>
           </ul>
 
         </nav>
       </header>
+
+
+      <div id="login-modal" class="modal fade">
+        <%= render 'sessions/new' %>
+      </div>
+
+      <div id="register-modal" class="modal fade">
+        <%= render 'users/form' %>
+      </div>
+
 
 
 
