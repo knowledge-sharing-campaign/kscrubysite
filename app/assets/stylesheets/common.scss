@@ -9,18 +9,6 @@ footer {
   width: 600px;
 }
 
-.logo {
-  /*margin-left: -51px;*/
-    padding-bottom: 0px;
-    margin: -23px -17px 30px;
-    margin-bottom: -38px;
-    float: left;
-    width: 260px;
-    /*padding: -11px 43px;*/
-    height: 150px;
-
-}
-
 .input-group[class*="col-"] {
     padding-right: 15px;
     padding-left: 15px;
@@ -11832,7 +11820,7 @@ button.close {
    	}
 
    	.st-navbar .navbar-header{
-   		margin-top: 25px;
+   		margin-top: 15px;
    	}
 
    	.st-navbar .navbar-toggle .icon-bar {
@@ -12705,14 +12693,7 @@ button.close {
 
 
     .logo {
-    /*margin-left: -51px;*/
-    padding-bottom: 0px;
-    margin: -23px -17px 30px;
-    margin-bottom: -38px;
-    float: left;
-    width: 260px;
-    /*padding: -11px 43px;*/
-    height: 150px;
+    height: 50px;
 }
 
 .well {
@@ -12950,4 +12931,9 @@ button.close {
 }
 .eventxt{
     color: white;
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
 }
