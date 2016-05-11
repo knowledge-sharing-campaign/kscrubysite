@@ -3,3 +3,9 @@
 @import "bootstrap-datepicker3";
 @import "common";
 @import "font-awesome";
+
+
+label.required:after {
+	content: " *";
+	color: red;
+}
