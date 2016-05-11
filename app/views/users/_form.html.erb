@@ -71,19 +71,19 @@
 
           <div class="form-group">
 
-                <%= f.label :dob, "Date of Birth" %><br>
-                <%= f.text_field :dob, class: 'date-picker form-control', placeholder: 'DD/MM/YYYY' %>
+                <%= f.label :date_of_birth, "Date of Birth" %><br>
+                <%= f.text_field :date_of_birth, class: 'date-picker form-control', placeholder: 'DD/MM/YYYY' %>
 
           </div>
 
           <div class="form-group">
 
-                <%= f.label :curr_address, "Current Address" %><br>
-                <%= f.text_field :curr_address, placeholder: "Current Address", class: 'form-control' %>
+                <%= f.label :current_address, "Current Address" %><br>
+                <%= f.text_field :current_address, placeholder: "Current Address", class: 'form-control' %>
                 <%= check_box_tag :copy_address %><%= label_tag :copy_address, "Same as permanent address" %>
 
-                <%= f.label :perm_address, "Permanent Address" %><br>
-                <%= f.text_field :perm_address, placeholder: "Permanet Address", class: 'form-control' %>
+                <%= f.label :permanent_address, "Permanent Address" %><br>
+                <%= f.text_field :permanent_address, placeholder: "Permanet Address", class: 'form-control' %>
 
           </div>
 
