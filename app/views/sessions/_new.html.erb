@@ -1,0 +1,39 @@
+<div class="modal-dialog modal-lg login-modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title form-signin-heading">Login</h4>
+    </div>
+    <div class="modal-body">
+      <% if flash[:alert] %>
+      <p id = "notice" ><%= flash[:alert] %> </p>
+      <% end %>
+      <%= form_tag :session do %>
+      <div class="form-group">
+        <%= label_tag :username, "Username or Email" %><br>
+        <%= text_field_tag :username, nil, placeholder: "Username or Email", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :password, "Password" %><br>
+        <%= password_field_tag :password, nil, placeholder: "Password", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :Stay_logged_in do %>
+        <%= check_box_tag :Stay_logged_in, class: "checkbox inline form-control"  %>
+        <span> Stay Logged in </span>
+        <% end %>
+
+      </div>
+
+      <%= submit_tag "Login", class: 'btn btn-primary btn-lg ' %>
+
+      <p> <%= link_to "New User ? Register now", :controller => :users, :action => :new %></p>
+
+      <p> <%= link_to "Forgotten password ?" %> </p>
+      <% end %>
+    </div>
+  </div>
+
+</div>

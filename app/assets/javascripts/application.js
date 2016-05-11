@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-smooth-scroll
+//= require masonry/masonry.min
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker

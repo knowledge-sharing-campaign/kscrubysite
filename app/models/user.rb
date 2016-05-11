@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :username, presence: true, uniqueness: true
 
-  validates :password, presence: true
+  validates :password, presence: true, confirmation: true
 
   validates :contact_number, format: { with: /\d{10}/, message: "is in bad format" }
 

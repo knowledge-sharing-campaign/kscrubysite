@@ -8,12 +8,13 @@ class SessionsController < ApplicationController
       login(user.id)
       redirect_to user_path(user)
     else
-      redirect_to new_session_path, alert: "Invalid username or password"
+      redirect_to new_session_path
+      flash[:danger] = 'Invalid email or password'
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, alert: "You Successfully signed out"
+    redirect_to root_path
   end
 end

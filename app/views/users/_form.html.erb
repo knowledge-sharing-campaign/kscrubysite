@@ -1,112 +1,181 @@
-<%= form_for :user, url: '/users' do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
+
+<div class="modal-dialog modal-lg register-modal-dialog">
+  <div class="row modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title form-signin-heading">Registration</h4>
+    </div>
+
+    <div class="modal-body">
+
+        <% @user ||= User.new %>
+
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
-        <% end %>
-      </ul>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+
+      <%= form_for :user, url: '/users' do |f| %>
+
+      <div class="form-group">
+        <div class="row">
+              <div class="col-md-4">
+                <%= f.label :first_name, "First Name" %>
+                <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>
+              </div>
+
+              <div class="col-md-4">
+                <%= f.label :last_name, "Last Name" %><br>
+                <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
+              </div>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.label :email, "Email ID" %><br>
+                <%= f.text_field :email, placeholder: "Email ID", class: 'form-control' %>
+              </div>
+
+              <div class="col-md-4">
+                <%= f.label :username, "Username" %>
+                <%= f.text_field :username, placeholder: "Username", class: 'form-control' %>
+              </div>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <%=  f.label :password, "Password" %><br>
+                <%= f.password_field :password, placeholder: '8 characters minimum and atleast one symbol', class: 'form-control' %>
+              </div>
+
+              <div class="col-md-4">
+                <%= f.label :password_confirmation, 'Confirm Password' %><br>
+                <%= f.password_field :password_confirmation, placeholder: 'should contain 8 characters and atleast one symbol', class: 'form-control' %>
+              </div>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.label :contact_number, "Contact Number" %><br>
+                <%= f.telephone_field :contact_number, placeholder: "Contact Number", class: 'form-control' %>
+              </div>
+
+              <div class="col-md-4">
+                <br><%= f.label :'Gender' %><br>
+                <%= f.radio_button :gender, 'Male'%> Male
+                <%= f.radio_button :gender, 'Female'%> Female
+                <%= f.radio_button :gender, 'Other'%> Other
+              </div>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.label :dob, "Date of Birth" %><br>
+                <%= f.text_field :dob, class: 'date-picker form-control', placeholder: 'DD/MM/YYYY' %>
+              </div>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.label :curr_address, "Current Address" %><br>
+                <%= f.text_field :curr_address, placeholder: "Current Address", class: 'form-control' %>
+                <%= check_box_tag :copy_address %><%= label_tag :copy_address, "Same as permanent address" %>
+              </div>
+
+              <div class="col-md-4">
+                <%= f.label :perm_address, "Permanent Address" %><br>
+                <%= f.text_field :perm_address, placeholder: "Permanet Address", class: 'form-control' %>
+              </div>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-6">
+                <%= f.label :country, "Country" %><br>
+                <%= f.country_select :country, {}, class: "form-control" %>
+              </div>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.label :city, "City" %><br>
+                <%= f.text_field :city, placeholder: "City", class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.label :course, "Course" %><br>
+                <%= f.text_field :course, placeholder: "Course", class: 'form-control' %>
+              </div>
+
+              <div class="col-md-4">
+                <%= f.label :university, "Universty / Institute" %><br>
+                <%= f.text_field :university, placeholder: "University / Institute", class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+
+                <br><%= f.label :'How did you get to know about KSC' %><br>
+                <%= f.check_box :source%> Friends
+                <%= f.check_box :source %> Social Media
+                <%= f.check_box :source %> Google Search
+                <%= f.check_box :source %> Other
+
+                <%= f.text_field :source %>
+
+          </div><br>
+
+          <div class="form-group">
+
+                <%= f.check_box :tos %>
+                By ticking the <strong class="label label-primary">Check box</strong>, you agree to the
+                <%= link_to 'Terms and Conditions', '/termscons' %>
+
+          </div>
+
+          <div class="form-group">
+
+                <%= recaptcha_tags %>
+
+          </div>
+
+
+              <div class="actions">
+                <%= f.submit "Sign up", class: 'btn btn-primary btn-lg' %>
+              </div>
+
+
+
+      <% end %>
+
     </div>
-  <% end %>
-  <div class="row">
-    <div class="col-xs-6">
-      <%= f.label :first_name, "First Name" %><br>
-      <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>
-    </div>
-    <div class="col-xs-6">
-      <%= f.label :last_name, "Last Name" %><br>
-      <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
-    </div>
+
+
   </div>
-  <div class="field">
-    <%= f.label :email, "Email ID" %><br>
-    <%= f.text_field :email, placeholder: "Email ID" %>
-  </div><br>
-  <div class="field">
-    <%= f.label :username, "Username" %><br>
-    <%= f.text_field :username, placeholder: "Username" %>
-  </div><br>
-  <div class="field">
-    <%= f.label :password, "Password" %><br>
-    <%= f.password_field :password, placeholder: 'minimum 8 characters minimium' %>
-  </div><br>
-  <div class="field">
-    <%= f.label :cpassword, 'Confirm Password' %><br>
-    <%= f.password_field :cpassword, placeholder: 'minimum 8 characters minimium' %>
-  </div><br>
-
-  <div class="field">
-    <%= f.label :contact_number, "Contact Number" %><br>
-    <%= f.telephone_field :contact_number, placeholder: "Contact Number" %>
-  </div><br>
-
-  <div class="field">
-    <%= f.label :'Gender' %>
-    <%= f.radio_button :gender, 'Male'%> Male
-    <%= f.radio_button :gender, 'Female'%> Female
-    <%= f.radio_button :gender, 'Other'%> Other
-  </div><br>
-  <div class="field">
-    <%= f.label :dob, "Date of Birth" %><br>
-
-    <%= f.text_field :dob, class: 'date-picker', placeholder: 'dd/mm/yyyy' %>
-  </div><br>
-
-
-  <div class="current">
-    <%= f.label :curr_address, "Current Address" %><br>
-    <%= f.text_field :curr_address, placeholder: "Current Address" %><br>
-    <%= check_box_tag :copy_address %><%= label_tag :copy_address, "Same as permanent address" %>
-
-  </div><br>
-
-  <div class="permanent">
-    <%= f.label :perm_address, "Permanent Address" %><br>
-    <%= f.text_field :perm_address, placeholder: "Permanet Address"%>
-  </div><br>
-
-  <div class="field">
-    <%= f.label :country, "country" %><br>
-    <%= f.country_select :country %>
-  </div><br>
-
-  <div class="field">
-    <%= f.label :city, "City" %><br>
-    <%= f.text_field :city, placeholder: "City" %>
-  </div><br>
-  <div class="field">
-    <%= f.label :course, "Course" %><br>
-    <%= f.text_field :course, placeholder: "Course" %>
-  </div><br>
-  <div class="field">
-    <%= f.label :university, "Universty" %><br>
-    <%= f.text_field :university, placeholder: "Universty" %>
-  </div><br>
-
-
-  <div class="field">
-    <!--<%= f.label :source, 'How Did You Hear About Us' %><br>
-      <%= f.select :source, [["Internet Ad","Internet Ad"], ["Google Search","Google Search"], ["Other","Other"]], prompt: "-------------------------" %>-->
-      <%= f.label :'How did you get to know about KSC' %><br>
-      <%= f.radio_button :source, 'Friends'%> Friends
-      <%= f.radio_button :source, 'Social Media' %> Social
-      <%= f.radio_button :source, 'Internet Search' %> Internet Search
-      <%= f.radio_button :source, 'Internet Ad' %> Internet Ad
-      <%= f.radio_button :source, 'Unknown' %> Unknown
-      <%= f.radio_button :source, 'Other' %> Other
-
-      <%= f.text_field :source %>
-  </div><br>
-
-  <div class ="field">
-    <%= f.check_box :tos %><%= link_to 'Terms and Conditions', '/termscons' %>
-  </div><br>
-
-  <%= recaptcha_tags %>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div><br>
-
-<% end %>
+</div>
