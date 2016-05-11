@@ -27,42 +27,42 @@
 
       <div class="form-group">
 
-                <%= f.label :first_name, "First Name" %><br>
+                <%= f.label :first_name, "First Name" , class: 'required'%><br>
                 <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>
 
 
 
-                <%= f.label :last_name, "Last Name" %><br>
+                <%= f.label :last_name, "Last Name" , class: 'required'%><br>
                 <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
 
           </div>
 
           <div class="form-group">
 
-                <%= f.label :email, "Email ID" %><br>
+                <%= f.label :email, "Email ID" , class: 'required'%><br>
                 <%= f.text_field :email, placeholder: "Email ID", class: 'form-control' %>
 
-                <%= f.label :username, "Username" %><br>
+                <%= f.label :username, "Username" , class: 'required'%><br>
                 <%= f.text_field :username, placeholder: "Username", class: 'form-control' %>
 
           </div>
 
           <div class="form-group">
 
-                <%=  f.label :password, "Password" %><br>
+                <%=  f.label :password, "Password" , class: 'required'%><br>
                 <%= f.password_field :password, placeholder: '8 characters minimum and atleast one symbol', class: 'form-control' %>
 
-                <%= f.label :password_confirmation, 'Confirm Password' %><br>
+                <%= f.label :password_confirmation, 'Confirm Password' , class: 'required'%><br>
                 <%= f.password_field :password_confirmation, placeholder: 'should contain 8 characters and atleast one symbol', class: 'form-control' %>
 
           </div>
 
           <div class="form-group">
 
-                <%= f.label :contact_number, "Contact Number" %><br>
+                <%= f.label :contact_number, "Contact Number" , class: 'required'%><br>
                 <%= f.telephone_field :contact_number, placeholder: "Contact Number", class: 'form-control' %>
 
-                <br><%= f.label :'Gender' %><br>
+                <br><%= f.label :'Gender' , class: 'required'%><br>
                 <%= f.radio_button :gender, 'Male'%> Male
                 <%= f.radio_button :gender, 'Female'%> Female
                 <%= f.radio_button :gender, 'Other'%> Other
@@ -71,32 +71,32 @@
 
           <div class="form-group">
 
-                <%= f.label :dob, "Date of Birth" %><br>
-                <%= f.text_field :dob, class: 'date-picker form-control', placeholder: 'DD/MM/YYYY' %>
+                <%= f.label :date_of_birth, "Date of Birth" , class: 'required'%><br>
+                <%= f.text_field :date_of_birth, class: 'date-picker form-control', placeholder: 'DD/MM/YYYY' %>
 
           </div>
 
           <div class="form-group">
 
-                <%= f.label :curr_address, "Current Address" %><br>
-                <%= f.text_field :curr_address, placeholder: "Current Address", class: 'form-control' %>
+                <%= f.label :current_address, "Current Address" , class: 'required'%><br>
+                <%= f.text_field :current_address, placeholder: "Current Address", class: 'form-control' %>
                 <%= check_box_tag :copy_address %><%= label_tag :copy_address, "Same as permanent address" %>
 
-                <%= f.label :perm_address, "Permanent Address" %><br>
-                <%= f.text_field :perm_address, placeholder: "Permanet Address", class: 'form-control' %>
+                <%= f.label :permanent_address, "Permanent Address" , class: 'required'%><br>
+                <%= f.text_field :permanent_address, placeholder: "Permanet Address", class: 'form-control' %>
 
           </div>
 
           <div class="form-group">
 
-                <%= f.label :country, "Country" %><br>
+                <%= f.label :country, "Country" , class: 'required'%><br>
                 <%= f.country_select :country, {}, class: "form-control" %>
 
           </div>
 
           <div class="form-group">
 
-                <%= f.label :city, "City" %><br>
+                <%= f.label :city, "City" , class: 'required'%><br>
                 <%= f.text_field :city, placeholder: "City", class: 'form-control' %>
 
           </div>
@@ -113,7 +113,7 @@
 
           <div class="form-group">
 
-                <br><%= f.label :'How did you get to know about KSC' %><br>
+                <br><%= f.label :'How did you get to know about KSC' , class: 'required'%><br>
                 <%= f.check_box :source%> Friends
                 <%= f.check_box :source %> Social Media
                 <%= f.check_box :source %> Google Search
