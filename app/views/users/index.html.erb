@@ -2,7 +2,9 @@
 
 
 <section id="slider">
-  <div id="home-carousel" class="carousel slide" data-ride="carousel">
+  <!-- Carousel
+   ================================================== -->
+   <div id="home-carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="item active" style="background-image: url('<%= asset_path('show.jpg') %>')"  class="backgroundslide">
         <div class="carousel-caption container">
@@ -66,50 +68,64 @@
     </div>
   </div> <!--/#home-carousel-->
 </section>
-<!-- /SLIDER -->
 
-<!--SERVICES-->
-<section>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-6 animated fadeRightBig">
-          <h1>What is KSC?</h1>
-          <p>The Knowledge Sharing Campaign is a community platform that brings together two groups of people: the Know & Can Teach (those who have experience and can share their knowledge) group and the Don’t Know & Can Learn (those who are eager to learn, but lack opportunities) group. KSC originated from a simple idea, which turned out to be its slogan: 'Bring, Share & Learn'African development does not depend on our endless hopes from the East or West. Any society that cares about its future, must invest in its youth. A key strategic area that Africa needs to invest on is Education, especially by providing the youth with accessible quality education.</p>
+   <!-- Marketing messaging and featurettes
+   ================================================== -->
+   <!-- Wrap the rest of the page in another container to center all the content. -->
+
+   <div class="container marketing">
+
+     <div class="row featurette">
+       <div class="col-md-7">
+         <h2 class="featurette-heading">What is KSC?</h2>
+         <p class="lead"><p>The Knowledge Sharing Campaign is a community platform that brings together two groups of people: the Know & Can Teach (those who have experience and can share their knowledge) group and the Don’t Know & Can Learn (those who are eager to learn, but lack opportunities) group. KSC originated from a simple idea, which turned out to be its slogan: 'Bring, Share & Learn'African development does not depend on our endless hopes from the East or West. Any society that cares about its future, must invest in its youth. A key strategic area that Africa needs to invest on is Education, especially by providing the youth with accessible quality education.</p>
         </div>
-        <div class="col-md-6">
-          <img src="<%= asset_path('Ksc - Copy.png') %>", class="grouppic"  />
-        </div>
+       <div class="col-md-5">
+         <img src="<%= asset_path('Ksc - Copy.png') %>", class="grouppic"  />
+       </div>
+     </div>
 
-        <div class="col-md-6">
-          <img src="<%= asset_path('02.png') %>", class="pc" />
-        </div>
+     <hr class="featurette-divider">
 
-        <div class="col-md-6">
-          <h1>Getting Experience</h1>
-          <p>There are no specific prerequisites to participate in these sessions. In fact, only a few students who attend these sessions have their own laptops. KSC is not just about tech sessions, but about knowledge sharing. Students who come have very limited exposure to key technologies. They first attend the KSC introductory sessions, which focus on assessing and improving the participant's computer literacy. For example, students who study in a non computer science program, create accounts for a list of free online applications and services, like GitHub. Not all students are able to efficiently use technologies like Google Apps that allow them to work as a team on a single report. KSC becomes a bridge that helps students embrace a very large online world, with skills needed to access this.</p>
+     <div class="row featurette">
+       <div class="col-md-7 col-md-push-5">
+         <h2 class="featurette-heading">Getting Experience</h2>
+         <p class="lead"><p>There are no specific prerequisites to participate in these sessions. In fact, only a few students who attend these sessions have their own laptops. KSC is not just about tech sessions, but about knowledge sharing. Students who come have very limited exposure to key technologies. They first attend the KSC introductory sessions, which focus on assessing and improving the participant's computer literacy. For example, students who study in a non computer science program, create accounts for a list of free online applications and services, like GitHub. Not all students are able to efficiently use technologies like Google Apps that allow them to work as a team on a single report. KSC becomes a bridge that helps students embrace a very large online world, with skills needed to access this.</p>
         </div>
+       <div class="col-md-5 col-md-pull-7">
+         <img src="<%= asset_path('02.png') %>", class="pc" />
+       </div>
+     </div>
 
-        <div class="col-md-6">
-          <img src="<%= asset_path('idea.png') %>", class="idea" />
-        </div>
+     <hr class="featurette-divider">
 
-        <div class="col-md-6">
-          <h1>Creative Ideas</h1>
-          <p>What was heartening was that from the 25 people we expected, 72% attended, out of which 50% were females. It was an engaging experience for both trainers and students. Here is a short video of one of the sessions.
+     <div class="row featurette">
+       <div class="col-md-7">
+         <h2 class="featurette-heading">Creative Ideas</h2>
+         <p class="lead">What was heartening was that from the 25 people we expected, 72% attended, out of which 50% were females. It was an engaging experience for both trainers and students. Here is a short video of one of the sessions.
             Although this first workshop targeted MBA students, any participant who came with a different background and who did not have an idea on how to start a business, walked away with an understanding of the Business Model Canvas (BMC) framework. With this template, students are now able to frame their innovative ideas and turn them into a business.</p>
           </div>
+       <div class="col-md-5">
+         <img src="<%= asset_path('idea.png') %>", class="idea" />
+       </div>
+     </div>
 
-          <div class="col-md-6 hillf" style=" margin-top: 309px;">
-            <h1>Reaching Goals</h1>
-            <p>In a few months, KSC has engaged and positively touched the lives of hundreds of young African students covering over 50% of African countries, out of which 40% were women. This is just the start - we hope that these numbers can quickly scale. We wish to replicate this experiment in other parts of the world where we know there are many African students with similar, if not tougher, challenges The African student diaspora faces challenges to get internship opportunities. KSC's key objectives have been shaped in a way that ensure we are able to respond to students’ specific challenges as we learn from their backgrounds and skills prior to starting the program. The program focuses on developing skills using Agile Practices, learning to use open source technologies and building awareness for social and economic issues. Communication and presentation skills are developed using the Pecha Kucha framework.</p>
-          </div>
+     <hr class="featurette-divider">
 
-          <div class="col-md-6">
-            <img src="<%= asset_path('hill.png') %>", class="hill" />
-          </div>
-          <div class="col-md-12 text-center">
+     <div class="row featurette">
+       <div class="col-md-7">
+         <h2 class="featurette-heading">What is KSC?</h2>
+         <p class="lead"><p>The Knowledge Sharing Campaign is a community platform that brings together two groups of people: the Know & Can Teach (those who have experience and can share their knowledge) group and the Don’t Know & Can Learn (those who are eager to learn, but lack opportunities) group. KSC originated from a simple idea, which turned out to be its slogan: 'Bring, Share & Learn'African development does not depend on our endless hopes from the East or West. Any society that cares about its future, must invest in its youth. A key strategic area that Africa needs to invest on is Education, especially by providing the youth with accessible quality education.</p>
+        </div>
+       <div class="col-md-5">
+         <img src="<%= asset_path('Ksc - Copy.png') %>", class="grouppic"  />
+       </div>
+     </div>
+
+     <hr class="featurette-divider">
+
+     <div class="col-md-12 text-center">
             <h1 class="text-center"> IMPACT OF KSC</h1>
             <iframe src="//fast.wistia.net/embed/iframe/or9cekm8i1" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
             <h3 class="vidtxt">Great initiative of the Knowledge Sharing Campaign <br>
@@ -156,16 +172,9 @@
 
       </section>
 
+     <!-- /END THE FEATURETTES -->
 
 
+     <!-- FOOTER -->
 
-
-
-      <div class="container">
-
-        <div class="row">
-          <div class="col-xs-4"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></div>
-          <div class="col-xs-4"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span> </div>
-          <div class="col-xs-4"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
-        </div>
-      </div>
+<!-- /.container -->
