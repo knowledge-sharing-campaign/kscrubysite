@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
+
   validates :first_name, presence: true
 
   validates :last_name, presence: true
@@ -17,7 +18,9 @@ class User < ActiveRecord::Base
 
   validates :password, presence: true, confirmation: true
 
-  validates :contact_number, format: { with: /\d{10}/, message: "accepts only 10 digits" }
+  validates :contact_number, format: { with: /\d{10}/, message: "should have only 10 digits" }
+
+  validates :gender, presence: true
 
   #validates :dob, presence: {type: :date, format: 'dd-mm-yyyy'}
 end
