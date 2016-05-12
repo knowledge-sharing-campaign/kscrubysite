@@ -12,7 +12,7 @@
 
       <% if @user.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+        <h2><%= pluralize(@user.errors.count, "form field") %> needs your attention</h2>
         <ul>
           <% @user.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -26,13 +26,13 @@
 
       <div class="form-group">
         <div class="row">
-              <div class="col-md-4">
-                <%= f.label :first_name, "First Name" %>
+              <div class="col-md-6">
+                <%= f.label :first_name, "First Name", class: 'required' %>
                 <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>
               </div>
 
-              <div class="col-md-4">
-                <%= f.label :last_name, "Last Name" %><br>
+              <div class="col-md-6">
+                <%= f.label :last_name, "Last Name", class: 'required' %><br>
                 <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
               </div>
           </div>
@@ -40,13 +40,13 @@
 
           <div class="form-group">
             <div class="row">
-              <div class="col-md-4">
-                <%= f.label :email, "Email ID" %><br>
+              <div class="col-md-6">
+                <%= f.label :email, "Email ID", class: 'required' %><br>
                 <%= f.text_field :email, placeholder: "Email ID", class: 'form-control' %>
               </div>
 
-              <div class="col-md-4">
-                <%= f.label :username, "Username" %>
+              <div class="col-md-6">
+                <%= f.label :username, "Username", class: 'required' %>
                 <%= f.text_field :username, placeholder: "Username", class: 'form-control' %>
               </div>
           </div>
@@ -54,27 +54,27 @@
 
           <div class="form-group">
             <div class="row">
-              <div class="col-md-4">
-                <%=  f.label :password, "Password" %><br>
-                <%= f.password_field :password, placeholder: '8 characters minimum and atleast one symbol', class: 'form-control' %>
+              <div class="col-md-6">
+                <%=  f.label :password, "Password", class: 'required' %><br>
+                <%= f.password_field :password, placeholder: '8 characters minimum and at least one symbol', class: 'form-control' %>
               </div>
 
-              <div class="col-md-4">
-                <%= f.label :password_confirmation, 'Confirm Password' %><br>
-                <%= f.password_field :password_confirmation, placeholder: 'should contain 8 characters and atleast one symbol', class: 'form-control' %>
+              <div class="col-md-6">
+                <%= f.label :password_confirmation, 'Confirm Password', class: 'required' %><br>
+                <%= f.password_field :password_confirmation, placeholder: 'should contain 8 characters and at least one symbol', class: 'form-control' %>
               </div>
           </div>
         </div>
 
           <div class="form-group">
             <div class="row">
-              <div class="col-md-4">
-                <%= f.label :contact_number, "Contact Number" %><br>
+              <div class="col-md-6">
+                <%= f.label :contact_number, "Contact Number", class: 'required' %><br>
                 <%= f.telephone_field :contact_number, placeholder: "Contact Number", class: 'form-control' %>
               </div>
 
-              <div class="col-md-4">
-                <br><%= f.label :'Gender' %><br>
+              <div class="col-md-6">
+                <br><%= f.label :'Gender', class: 'required' %><br>
                 <%= f.radio_button :gender, 'Male'%> Male
                 <%= f.radio_button :gender, 'Female'%> Female
                 <%= f.radio_button :gender, 'Other'%> Other
@@ -84,7 +84,7 @@
 
           <div class="form-group">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <%= f.label :date_of_birth, "Date of Birth" %><br>
                 <%= f.text_field :date_of_birth, class: 'date-picker form-control', placeholder: 'DD/MM/YYYY' %>
               </div>
@@ -93,15 +93,15 @@
 
           <div class="form-group">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <%= f.label :current_address, "Current Address" %><br>
                 <%= f.text_field :current_address, placeholder: "Current Address", class: 'form-control' %>
                 <%= check_box_tag :copy_address %><%= label_tag :copy_address, "Same as permanent address" %>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <%= f.label :permanent_address, "Permanent Address" %><br>
-                <%= f.text_field :permanent_address, placeholder: "Permanet Address", class: 'form-control' %>
+                <%= f.text_field :permanent_address, placeholder: "Permanent Address", class: 'form-control' %>
               </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-6">
-                <%= f.label :country, "Country" %><br>
+                <%= f.label :country, "Country", class: 'required' %><br>
                 <%= f.country_select :country, {}, class: "form-control" %>
               </div>
           </div>
@@ -117,7 +117,7 @@
 
           <div class="form-group">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <%= f.label :city, "City" %><br>
                 <%= f.text_field :city, placeholder: "City", class: 'form-control' %>
               </div>
@@ -126,12 +126,12 @@
 
           <div class="form-group">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <%= f.label :course, "Course" %><br>
                 <%= f.text_field :course, placeholder: "Course", class: 'form-control' %>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <%= f.label :university, "Universty / Institute" %><br>
                 <%= f.text_field :university, placeholder: "University / Institute", class: 'form-control' %>
               </div>
@@ -140,7 +140,7 @@
 
           <div class="form-group">
 
-                <br><%= f.label :'How did you get to know about KSC' %><br>
+                <br><%= f.label :'How did you get to know about KSC', class: 'required' %><br>
                 <%= f.check_box :source%> Friends
                 <%= f.check_box :source %> Social Media
                 <%= f.check_box :source %> Google Search

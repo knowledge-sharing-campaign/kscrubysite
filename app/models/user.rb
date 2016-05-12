@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 
   validates :password, presence: true, confirmation: true
 
-  validates :contact_number, format: { with: /\d{10}/, message: "is in bad format" }
+  validates :contact_number, format: { with: /\d{10}/, message: "accepts only 10 digits" }
 
   #validates :dob, presence: {type: :date, format: 'dd-mm-yyyy'}
 end
