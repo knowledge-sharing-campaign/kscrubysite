@@ -27,12 +27,12 @@
       <div class="form-group">
         <div class="row">
               <div class="col-md-6">
-                <%= f.label :first_name, "First Name" %>
+                <%= f.label :first_name, "First Name", class: 'required' %>
                 <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>
               </div>
 
               <div class="col-md-6">
-                <%= f.label :last_name, "Last Name" %><br>
+                <%= f.label :last_name, "Last Name", class: 'required' %><br>
                 <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
               </div>
           </div>
@@ -41,12 +41,12 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-6">
-                <%= f.label :email, "Email ID" %><br>
+                <%= f.label :email, "Email ID", class: 'required' %><br>
                 <%= f.text_field :email, placeholder: "Email ID", class: 'form-control' %>
               </div>
 
               <div class="col-md-6">
-                <%= f.label :username, "Username" %>
+                <%= f.label :username, "Username", class: 'required' %>
                 <%= f.text_field :username, placeholder: "Username", class: 'form-control' %>
               </div>
           </div>
@@ -55,12 +55,12 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-6">
-                <%=  f.label :password, "Password" %><br>
+                <%=  f.label :password, "Password", class: 'required' %><br>
                 <%= f.password_field :password, placeholder: '8 characters minimum and at least one symbol', class: 'form-control' %>
               </div>
 
               <div class="col-md-6">
-                <%= f.label :password_confirmation, 'Confirm Password' %><br>
+                <%= f.label :password_confirmation, 'Confirm Password', class: 'required' %><br>
                 <%= f.password_field :password_confirmation, placeholder: 'should contain 8 characters and at least one symbol', class: 'form-control' %>
               </div>
           </div>
@@ -69,12 +69,12 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-6">
-                <%= f.label :contact_number, "Contact Number" %><br>
+                <%= f.label :contact_number, "Contact Number", class: 'required' %><br>
                 <%= f.telephone_field :contact_number, placeholder: "Contact Number", class: 'form-control' %>
               </div>
 
               <div class="col-md-6">
-                <br><%= f.label :'Gender' %><br>
+                <br><%= f.label :'Gender', class: 'required' %><br>
                 <%= f.radio_button :gender, 'Male'%> Male
                 <%= f.radio_button :gender, 'Female'%> Female
                 <%= f.radio_button :gender, 'Other'%> Other
@@ -109,7 +109,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-6">
-                <%= f.label :country, "Country" %><br>
+                <%= f.label :country, "Country", class: 'required' %><br>
                 <%= f.country_select :country, {}, class: "form-control" %>
               </div>
           </div>
@@ -140,7 +140,7 @@
 
           <div class="form-group">
 
-                <br><%= f.label :'How did you get to know about KSC' %><br>
+                <br><%= f.label :'How did you get to know about KSC', class: 'required' %><br>
                 <%= f.check_box :source%> Friends
                 <%= f.check_box :source %> Social Media
                 <%= f.check_box :source %> Google Search
