@@ -120,12 +120,7 @@
         <%= f.label :'How did you get to know about KSC', class: 'required' %><br>
         <div class="hear-aboutus">
 
-        <%= f.check_box :source%> &nbsp;Friends&nbsp;
-        <%= f.check_box :source %> &nbsp;Social Media&nbsp;
-        <%= f.check_box :source %> &nbsp;Google Search&nbsp;
-        <%= f.check_box :source %> &nbsp;Other&nbsp;
-
-        <%= f.text_field :source %>
+          <%= f.collection_check_boxes :source, ["Friends", "Social Media", "Google Search", "Other"], :to_s, :to_s %>
       </div>
       </div>
 

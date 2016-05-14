@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 
   validates :tos, acceptance: true
 
+  serialize :source
+
 
   EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   NAME_REGEX = /\A[a-zA-Z ']+\z/
@@ -40,7 +42,7 @@ class User < ActiveRecord::Base
 
   validates :university, presence: true, format: { with: CITY_REGEX, message: "should be alphabets only"}
 
-  validates :source, :presence => { :message => " - Please tick how did you get to know about KSC" }
+  validates :source, presence: { message: " - Please tick how did you get to know about KSC" }
 
   validates :date_of_birth, presence: {type: :date, format: 'dd-mm-yyyy'}
 end

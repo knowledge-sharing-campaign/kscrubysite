@@ -38,7 +38,8 @@ class UsersController < ApplicationController
       :city,
       :course,
       :university,
-      :source
+      {source: []},
+      :tos
     )
   end
 end
