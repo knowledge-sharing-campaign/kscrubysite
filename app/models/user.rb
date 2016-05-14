@@ -42,5 +42,5 @@ class User < ActiveRecord::Base
 
   validates :source, :presence => { :message => " - Please tick how did you get to know about KSC" }
 
-  #validates :dob, presence: {type: :date, format: 'dd-mm-yyyy'}
+  validates :date_of_birth, presence: {type: :date, format: 'dd-mm-yyyy'}
 end

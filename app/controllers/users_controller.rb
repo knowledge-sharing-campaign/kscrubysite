@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       :password_confirmation,
       :contact_number,
       :gender,
-      :dob,
+      :date_of_birth,
       :current_address,
       :permanent_address,
       :country,
