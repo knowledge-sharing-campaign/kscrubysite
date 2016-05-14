@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username, presence: true, uniqueness: true
 
   validates :password, presence: true, confirmation: true
-
-  validates :contact_number, presence: true, format: { with: /\d{10}/, message: "should have only 10 digits" }
+  # COuntry code regex: /\A\d{3}\d{10}\z/
+  validates :contact_number, presence: true, format: { with: /\A\d{10}\z/, message: "should have only 10 digits" }
 
   validates :gender, presence: true
 
