@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  validates :tos, acceptance: true
+  validates :terms_and_conditions, acceptance: true
 
   serialize :source
 
@@ -20,7 +20,9 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
-  validates_uniqueness_of :username, presence: true, uniqueness: true
+  validates :username, presence: true, format: { with: USERNAME_REGEX, message: "please enter a username"}
+
+  #validates_uniqueness_of :username, presence: true, uniqueness: true
 
   validates :password, presence: true, confirmation: true
   # COuntry code regex: /\A\d{3}\d{10}\z/

@@ -39,7 +39,7 @@ class UsersController < ApplicationController
       :course,
       :university,
       {source: []},
-      :tos
+      :terms_and_conditions
     )
   end
 end
