@@ -8,171 +8,150 @@
 
     <div class="modal-body">
 
-        <% @user ||= User.new %>
+      <% @user ||= User.new %>
 
       <% if @user.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@user.errors.count, "form field") %> needs your attention</h2>
         <ul>
           <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <li class="error-msg"><%= msg %></li>
           <% end %>
         </ul>
       </div>
       <% end %>
 
-
+      <div class="col-md-12">
       <%= form_for :user, url: '/users' do |f| %>
 
       <div class="form-group">
-        <div class="row">
-              <div class="col-md-6">
-                <%= f.label :first_name, "First Name", class: 'required' %>
-                <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>
-              </div>
 
-              <div class="col-md-6">
-                <%= f.label :last_name, "Last Name", class: 'required' %><br>
-                <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
-              </div>
-          </div>
-        </div>
+        <%= f.label :first_name, "First Name", class: 'required' %>
+        <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-6">
-                <%= f.label :email, "Email ID", class: 'required' %><br>
-                <%= f.text_field :email, placeholder: "Email ID", class: 'form-control' %>
-              </div>
+        <%= f.label :last_name, "Last Name", class: 'required' %>
+        <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
 
-              <div class="col-md-6">
-                <%= f.label :username, "Username", class: 'required' %>
-                <%= f.text_field :username, placeholder: "Username", class: 'form-control' %>
-              </div>
-          </div>
-        </div>
+      </div>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-6">
-                <%=  f.label :password, "Password", class: 'required' %><br>
-                <%= f.password_field :password, placeholder: '8 characters minimum and at least one symbol', class: 'form-control' %>
-              </div>
+      <div class="form-group">
 
-              <div class="col-md-6">
-                <%= f.label :password_confirmation, 'Confirm Password', class: 'required' %><br>
-                <%= f.password_field :password_confirmation, placeholder: 'should contain 8 characters and at least one symbol', class: 'form-control' %>
-              </div>
-          </div>
-        </div>
+        <%= f.label :email, "Email ID", class: 'required' %>
+        <%= f.text_field :email, placeholder: "Email ID", class: 'form-control' %>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-6">
-                <%= f.label :contact_number, "Contact Number", class: 'required' %><br>
-                <%= f.telephone_field :contact_number, placeholder: "Contact Number", class: 'form-control' %>
-              </div>
+        <%= f.label :username, "Username", class: 'required' %>
+        <%= f.text_field :username, placeholder: "Username", class: 'form-control' %>
 
-              <div class="col-md-6">
-                <br><%= f.label :'Gender', class: 'required' %><br>
-                <%= f.radio_button :gender, 'Male'%> Male
-                <%= f.radio_button :gender, 'Female'%> Female
-                <%= f.radio_button :gender, 'Other'%> Other
-              </div>
-          </div>
-        </div>
+      </div>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-6">
-                <%= f.label :date_of_birth, "Date of Birth" %><br>
-                <%= f.text_field :date_of_birth, class: 'date-picker form-control', placeholder: 'DD/MM/YYYY' %>
-              </div>
-          </div>
-        </div>
+      <div class="form-group">
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-6">
-                <%= f.label :current_address, "Current Address" %><br>
-                <%= f.text_field :current_address, placeholder: "Current Address", class: 'form-control' %>
-                <%= check_box_tag :copy_address %><%= label_tag :copy_address, "Same as permanent address" %>
-              </div>
+        <%=  f.label :password, "Password", class: 'required' %>
+        <%= f.password_field :password, placeholder: '8 characters minimum and at least one symbol', class: 'form-control' %>
 
-              <div class="col-md-6">
-                <%= f.label :permanent_address, "Permanent Address" %><br>
-                <%= f.text_field :permanent_address, placeholder: "Permanent Address", class: 'form-control' %>
-              </div>
-          </div>
-        </div>
+        <%= f.label :password_confirmation, 'Confirm Password', class: 'required' %>
+        <%= f.password_field :password_confirmation, placeholder: 'should contain 8 characters and at least one symbol', class: 'form-control' %>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-6">
-                <%= f.label :country, "Country", class: 'required' %><br>
-                <%= f.country_select :country, {}, class: "form-control" %>
-              </div>
-          </div>
-        </div>
+      </div>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-6">
-                <%= f.label :city, "City" %><br>
-                <%= f.text_field :city, placeholder: "City", class: 'form-control' %>
-              </div>
-            </div>
-          </div>
+      <div class="form-group">
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-6">
-                <%= f.label :course, "Course" %><br>
-                <%= f.text_field :course, placeholder: "Course", class: 'form-control' %>
-              </div>
+        <%= f.label :contact_number, "Contact Number", class: 'required' %>
+        <%= f.telephone_field :contact_number, placeholder: "Contact Number", class: 'form-control' %>
 
-              <div class="col-md-6">
-                <%= f.label :university, "Universty / Institute" %><br>
-                <%= f.text_field :university, placeholder: "University / Institute", class: 'form-control' %>
-              </div>
-            </div>
-          </div>
+      </div>
 
-          <div class="form-group">
+      <div class="form-group">
+        <%= f.label :'Gender', class: 'required' %><br>
+        <div class="gender">
 
-                <br><%= f.label :'How did you get to know about KSC', class: 'required' %><br>
-                <%= f.check_box :source%> Friends
-                <%= f.check_box :source %> Social Media
-                <%= f.check_box :source %> Google Search
-                <%= f.check_box :source %> Other
+        <%= f.radio_button :gender, 'Male'%>&nbsp; Male&nbsp;
+        <%= f.radio_button :gender, 'Female'%> &nbsp;Female&nbsp;
+        <%= f.radio_button :gender, 'Other'%> &nbsp;Other
+      </div>
+      </div>
 
-                <%= f.text_field :source %>
+      <div class="form-group">
 
-          </div><br>
+        <%= f.label :date_of_birth, "Date of Birth" %>
+        <%= f.text_field :date_of_birth, class: 'date-picker form-control', placeholder: 'DD/MM/YYYY' %>
 
-          <div class="form-group">
+        <!-- i tried to implement date_of_birth using rails date_select tag, that also failed
+        < f.date_select :date_of_birth, :start_year => Date.current.year, :end_year => 1930, order: [:day, :month, :year] > -->
 
-                <%= f.check_box :tos %>
-                By ticking the <strong class="label label-primary">Check box</strong>, you agree to the
-                <%= link_to 'Terms and Conditions', '/termscons' %>
+      </div>
 
-          </div>
+      <div class="form-group">
 
-          <div class="form-group">
+        <%= f.label :current_address, "Current Address" %>
+        <%= f.text_area :current_address, size: "4x3", placeholder: "Current Address", class: 'form-control' %>
+        <%= check_box_tag :copy_address %>&nbsp;&nbsp;<%= label_tag :copy_address, "Same as permanent address" %>
 
-                <%= recaptcha_tags %>
+        <%= f.label :permanent_address, "Permanent Address" %>
+        <%= f.text_area :permanent_address, size: "3x3", placeholder: "Permanent Address", class: 'form-control' %>
 
-          </div>
+      </div>
+
+      <div class="form-group">
+
+        <%= f.label :country, "Country", class: 'required' %>
+        <%= f.country_select :country, {}, class: "form-control" %>
+
+      </div>
+
+      <div class="form-group">
+
+        <%= f.label :city, "City" %>
+        <%= f.text_field :city, placeholder: "City", class: 'form-control' %>
+
+      </div>
+
+      <div class="form-group">
+
+        <%= f.label :course, "Course" %>
+        <%= f.text_field :course, placeholder: "Course", class: 'form-control' %>
+
+        <%= f.label :university, "Universty / Institute" %>
+        <%= f.text_field :university, placeholder: "University / Institute", class: 'form-control' %>
+
+      </div>
+
+      <div class="form-group">
+        <%= f.label :'How did you get to know about KSC', class: 'required' %><br>
+        <div class="hear-aboutus">
+
+        <%= f.check_box :source%> &nbsp;Friends&nbsp;
+        <%= f.check_box :source %> &nbsp;Social Media&nbsp;
+        <%= f.check_box :source %> &nbsp;Google Search&nbsp;
+        <%= f.check_box :source %> &nbsp;Other&nbsp;
+
+        <%= f.text_field :source %>
+      </div>
+      </div>
+
+      <div class="form-group">
+
+        <%= f.check_box :tos, class: 'tos' %>
+        &nbsp;By ticking the <strong class="label label-primary">Check box</strong>, you agree to the
+        <%= link_to 'Terms and Conditions', '/termscons' %>
+
+      </div>
+
+      <div class="form-group">
+
+        <%= recaptcha_tags %>
+
+      </div>
 
 
-              <div class="actions">
-                <%= f.submit "Sign up", class: 'btn btn-primary btn-lg' %>
-              </div>
-
+      <div class="actions">
+        <%= f.submit "Sign up", class: 'btn btn-primary btn-lg' %>
+      </div>
+      <br>
 
 
       <% end %>
-
+    </div>
     </div>
 
 
