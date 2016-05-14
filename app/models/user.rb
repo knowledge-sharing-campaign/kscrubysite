@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   USERNAME_REGEX= /\A[a-z0-9-]+\z/
   CITY_REGEX = /\A[a-zA-Z ]+\z/
 
+  MULTILINE_WORD_REGEX=/^[a-zA-Z0-9 #-,\/]+$/
+
   validates :first_name, presence: true, format: { with: NAME_REGEX, message: "can have only characters"}
 
   validates :last_name, presence: true, format: { with: NAME_REGEX, message: "can have only characters"}
@@ -26,9 +28,9 @@ class User < ActiveRecord::Base
 
   #validates_presence_of :date_of_birth
 
-  validates :current_address, presence: true, format: { with: CITY_REGEX, message: "should alphabets only"}
+  validates :current_address, presence: true, format: { with: MULTILINE_WORD_REGEX, message: "should alphabets only", multiline: true}
 
-  validates :permanent_address, presence: true, format: { with: CITY_REGEX, message: "should alphabets only"}
+  validates :permanent_address, presence: true, format: { with: MULTILINE_WORD_REGEX, message: "should alphabets only", multiline: true}
 
   validates :country, presence: true
 
