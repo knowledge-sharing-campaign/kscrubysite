@@ -16,9 +16,9 @@ $(function() {
     	function showModal(){
     			var src = $(this).attr('src');
     			var img = '<img src="' + src + '" class="img-responsive"/>';
-    			var index = $(this).parent('li').attr('data-index');
-    			clicked.prevImg = parseInt(index) - parseInt(1);
-    			clicked.nextImg = parseInt(index) + parseInt(1);
+    			var index = $(this).closest('li').data('index');
+    			clicked.prevImg = parseInt(index) - 1;
+    			clicked.nextImg = parseInt(index) + 1;
     			var html = '';
     			html += img;
     			html += '<div style="height:25px;clear:both;display:block;">';
@@ -65,7 +65,7 @@ $(function() {
     	}
     	$(document).ready(function(){
     		$(this).on('click', 'a.controls', nextPrevHandler);
-    		$('li').not('.clearfix').each(function(i){
+    		$('#images').find('li').not('.clearfix').each(function(i){
     					$(this).attr('data-index',i);
     					var img = $(this).find('img');
     					img.on('click',showModal);
