@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.where('username = :e OR email = :e', e: params[:username]).first
     if user && user.password == params[:password]
       login(user.id)
-      redirect_to user_path(user)
+      redirect_to dashboard_path
     else
       redirect_to new_session_path
       flash[:danger] = 'Invalid email or password'

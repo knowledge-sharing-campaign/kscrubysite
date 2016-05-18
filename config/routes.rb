@@ -15,11 +15,8 @@ Rails.application.routes.draw do
   get '/privacy' => 'users#privacy'
   get '/rahul' => 'users#rahul'
 
-
-
-
-
-  resources :users, only:[:new, :create, :show]
+  get '/dashboard' => 'users#dashboard'
+  resources :users, only:[:new, :create]
 
   resource :welcome, only:[:new]
 

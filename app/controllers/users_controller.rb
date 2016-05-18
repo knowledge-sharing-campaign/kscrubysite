@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authorize_user, only: :show
+  before_action :authorize_user, only: :dashboard
 
   def new
   end
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def dashboard
   end
 
   private
