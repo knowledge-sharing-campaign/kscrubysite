@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     #if @user.save
     if verify_recaptcha(model: @user) && @user.save
       login @user.id
-      redirect_to user_path(@user)
+      redirect_to dashboard_path(@user)
     else
       flash[:danger] = 'You have not filled your details.'
       render :new
