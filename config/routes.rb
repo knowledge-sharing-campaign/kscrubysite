@@ -1,12 +1,22 @@
 Rails.application.routes.draw do
 
+  #get 'invites/create'
+
+  #get 'invites/destroy'
+
+  #get 'events/index'
+
+  #get 'events/controller'
+
+  #get 'events/index'
+
   get 'termscons' => 'users#termscons'
   get 'registersuccess' => 'users#registersuccess'
 
   get '/aboutus' => 'users#aboutus'
   get '/charles' => 'users#charles'
   get '/contactus' => 'users#contactus'
-  get '/events' => 'users#events'
+  #get '/events' => 'users#events'
 
   get '/forum' => 'users#forum'
   get '/gallery' => 'users#gallery'
@@ -22,7 +32,9 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
+  resources :events, only: [:new, :create, :show, :index]
 
+  resources :invites, only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
