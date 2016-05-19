@@ -244,15 +244,6 @@ body {
       padding:12px;
       background:#fff;
     }
-      /*override modal for demo only*/
-      .modal-dialog {
-          max-width:500px;
-      }
-      @media screen and (min-width: 768px){
-          .modal-dialog {
-              width:500px;
-          }
-      }
       @media screen and (max-width: 380px){
          .col-xxs-12 {
            width:100%;
@@ -4155,7 +4146,7 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 .img-rounded {
