@@ -1,9 +1,8 @@
-<% provide(:title, "Create Event") %>
+<% provide(:title, "Edit") %>
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-2">
 		<div class="well well-lg">
-
-			<h2>Create a New Event</h2>
+			<h2>Edit Event</h2>
 			<%= form_for(@event) do |f| %>
 				<%= render 'shared/error_messages', object: f.object %>
 
@@ -17,28 +16,30 @@
 				<%= f.text_field :location, class: "form-control" %>
 
 				<div class="row">
-
 					<div class="col-sm-4">
-						<%= f.label "Date" %>
-						<div class="input-group date">
-							<%= f.text_field :date, class: "form-control" %><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-						</div>
-					</div>
 
+					<%= f.label "Date" %>
+					<div class="input-group date">
+						<%= f.text_field :date, :value => @event.date.strftime("%d/%m/%Y"), class: "form-control" %><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+					</div>
+					</div>
 					<div class="col-sm-4 col-sm-offset-1">
 						<%= f.label "Start Time" %>
 						<div class="input-group">
-							<%= f.text_field :start_time, class: "time ui-timepicker-input form-control", placeholder: "15:00" %><span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+						<%= f.text_field :start_time, :value => @event.start_time.strftime("%H:%M"), class: "time ui-timepicker-input form-control", placeholder: "15:00" %><span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
 						</div>
 					</div>
+
 				</div>
+
 
 				<div class="row create-bottom">
 					<div class="col-sm-4 col-sm-offset-4">
-						<%= f.submit "Create event", class: "form-control btn btn-success create-button"%>
-					</div>
-				</div>
+					<%= f.submit "Save Changes", class: "form-control btn btn-success create-button"%>
 
+					</div>
+
+				</div>
 			<% end %>
 
 		</div>

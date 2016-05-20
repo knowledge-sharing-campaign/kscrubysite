@@ -26,15 +26,24 @@ Rails.application.routes.draw do
   get '/rahul' => 'users#rahul'
 
   get '/dashboard' => 'users#dashboard'
-  resources :users, only:[:new, :create]
+
+  get 'user_events' => 'users#my_events'
+
+  get 'statis_pages/about'
+
+  get 'invites/create'
+
+  #devise_for :users, :controllers: { sessions: 'users/sessions' }
+
+  resources :users#, only:[:new, :create]
 
   resource :welcome, only:[:new]
 
   resource :session, only: [:new, :create, :destroy]
 
-  resources :events, only: [:new, :create, :show, :index]
+  resources :events#, only: [:new, :create, :show, :index]
 
-  resources :invites, only: [:create, :destroy]
+  resources :invites#, only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

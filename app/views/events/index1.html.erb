@@ -1,0 +1,9 @@
+<h1>Browse All Events</h1>
+
+<h2>Upcoming</h2>
+<%= render 'shared/table', object: @events_upcoming %>
+<%= will_paginate @events_upcoming, :param_name => "upcoming" %>
+
+<h2>Past</h2>
+<%= render 'shared/table', object: @events_past %>
+<%= will_paginate @events_past, :param_name => "past" %>

@@ -1,9 +1,19 @@
-<h1>Browse All Events</h1>
+<% provide(:title, "Events") %>
+<div class="filter row">
+	<div class="col-sm-4 col-sm-offset-3">
+		<div class="btn-group btn-group-justified">
+			<%= link_to "Upcoming Events", events_path(:upcoming => true), class: "btn btn-info btn-sm" %>
+			<%= link_to "Past Events", events_path(:past => true), class: "btn btn-info btn-sm" %>
+		</div>
+	</div>
+</div>
 
-<h2>Upcoming</h2>
-<%= render 'shared/table', object: @events_upcoming %>
-<%= will_paginate @events_upcoming, :param_name => "upcoming" %>
 
-<h2>Past</h2>
-<%= render 'shared/table', object: @events_past %>
-<%= will_paginate @events_past, :param_name => "past" %>
+
+
+<div class="event-index row">
+	<div class="col-sm-6 col-sm-offset-3">
+	<%= render 'events/event_box' %>
+	<%= will_paginate %>
+	</div>
+</div>

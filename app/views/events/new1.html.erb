@@ -1,0 +1,10 @@
+<h1>Create Event</h1>
+
+<%= bootstrap_form_for(@event) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :location %>
+  <%= f.text_area :description %>
+  <%= f.date_field :date%>
+  <%= f.submit "Create Event",  class: "btn btn-lg btn-primary"  %>
+<% end %>
+<br>

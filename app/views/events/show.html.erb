@@ -1,22 +1,64 @@
-<h1><%= @event.title %></h1>
+<% provide(:title, @event.title) %>
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<div class="show-event">
+			<div class="event-heading">
+				<h4><%= @event.title.capitalize %></h4>
+			</div>
+			<div class="event-content">
+				<p><%= @event.description %></p>
+				<p class="host-name">By <%=@event.host.name %></p>
+				<ul>
+					<li>
+						<i class="icon fa fa-map-marker"></i><span><%= @event.location %></span>
+					</li>
+					<li>
+						<i class="icon fa fa-calendar-o"></i><span><%= "#{format_date(@event.date)} at #{format_time(@event.start_time)}"%> </span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
 
-<% if signed_in? %>
-<div class="text-center"><%= render 'attend_form' %></div>
-<% end %>
+		<div class="col-sm-2">
+		<div class="attend-box">
+			<% if user_signed_in? && current_user != @event.host %>
+				<% if @event.date < Date.today %>
+					<p class="event-over">This event has finished.</p>
+				<% elsif @event.guests.include?(current_user) %>
+					<%= form_for(current_user.invites.find_by(attended_event_id: @event.id), :html => { method: :delete }) do |f| %>
+						<%= f.submit "Leave event", class: "form-control btn btn-danger" %>
+					<% end %>
+				<% else %>
+					<%= form_for(current_user.invites.build(attended_event_id: @event.id)) do |f| %>
+						<%= f.hidden_field :attended_event_id, :value => @event.id %>
+						<%= f.submit "Attend Event", class: "form-control btn btn-success" %>
+					<% end %>
 
-<p><b>Location: </b><%= @event.location %></p> 
-<p><b>Host: </b><%= @event.creator.name %></p>
+				<% end %>
+			<% elsif @event.host == current_user %>
+				<%= link_to "Edit Event", edit_event_path, class: "btn btn-primary" %>
+				<%= link_to "Delete event", @event, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-danger" %>
+			<% end %>
+			</div>
+		</div>
+</div>
 
-<p><%= @event.description %></p>
 
-</br>
 
-<b>Who's Going:</b>
 
-<ol>
-<% @event.attendees.each do |attendee| %>
-   <li><%= link_to attendee.name, attendee %></li>
 
-<% end %>
-</ol>
+
+
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<h3 class="attending-head"><i class="fa fa-list"></i>Users Attending</h3>
+		<% @guests.each do |guest| %>
+			<ul class="guest-list">
+				<li><%= guest.name %></li>
+			</ul>
+		<% end %>
+	</div>
+</div>

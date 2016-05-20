@@ -1,0 +1,21 @@
+<% @events.each do |event| %>
+	<a href="<%= event_path(event.id)%>">
+	<section class="event-box">
+		<div class="event-heading">
+			<h4><%= event.title.capitalize %></h4>
+		</div>
+	</a>
+	<div class="event-content">
+		<p><%= event.description %></p>
+		<p class="host-name">By <%=event.host.name %></p>
+			<ul>
+				<li>
+					<i class="icon fa fa-map-marker"></i><span><%= event.location %></span>
+				</li>
+				<li>
+					<i class="icon fa fa-calendar-o"></i><span><%= "#{format_date(event.date)} at #{format_time(event.start_time)}"%> </span>
+				</li>
+			</ul>
+	</div>
+	</section>
+<% end %>

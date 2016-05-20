@@ -1,30 +1,61 @@
 class EventsController < ApplicationController
-  
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
+	has_scope :upcoming
+	has_scope :past
+
+  def index
+		if request.fullpath.include?('upcoming=true') || request.fullpath.include?('past=true')
+			@events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 5)
+		else
+			@events = Event.order("date DESC").paginate(page: params[:page], :per_page => 5)
+		end
+	end
+
+  def show
+    @event = Event.find(params[:id])
+		@guests = @event.guests
+  end
+
   def new
-  	@event = current_user.events.build
+  	#@event = current_user.events.build
+    @event = Event.new
   end
 
   def create
-  	@event = current_user.events.build(event_params)
-  	if @event.save
-  		redirect_to event_path(@event)
-  	else
-  		render 'new'
-  	end
-  end
+		@event = current_user.events.new(event_params)
+		if @event.save
+			flash[:notice] = "Event Created"
+			redirect_to @event
+		else
+			render 'new'
+		end
+	end
 
-  def show
-  	@event = Event.find(params[:id])
-  end
+  def edit
+		@event = Event.find(params[:id])
+	end
 
-  def index
-  	@events_upcoming = Event.upcoming.paginate(page: params[:upcoming])
-  	@events_past = Event.past.paginate(page: params[:past])
-  end
+  def update
+		@event = Event.find(params[:id])
+		if @event.update_attributes(event_params)
+			flash[:notice] = "Event updated"
+			redirect_to @event
+		else
+			render 'edit'
+		end
+	end
+
+  def destroy
+		Event.find(params[:id]).destroy
+		flash[:notice] = "Event Deleted"
+    	redirect_to events_path
+	end
 
   private
-  	def event_params
-  		params.require(:event).permit(:title, :location, :description, :date)
-	end
+
+	  def event_params
+		params.require(:event).permit(:title, :description, :location, :date, :start_time)
+	  end
 
 end

@@ -50,16 +50,34 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             <% if(user_signed_in?) %>
-            <li>
-              <%= link_to session_path, method: :delete do %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    						 <i class="fa fa-user"><%= current_user.username %></i>
+    						 <span class="caret"></span>
+					   </a>
+             <ul class="dropdown-menu">
+    							<li><a href="#">Settings</a></li>
+    							<li><%= link_to "My Events", user_events_path %></li>
+    							<li class="divider"></li>
+    							<li><%= link_to "About", statis_pages_about_path %></li>
+    							<li><%= link_to "Log out", session_path, method: "delete" %></li>
+						</ul>
+          </li>
+          <% else %>
+              <li><a href="#" data-toggle="modal" data-target="#login-modal">Log in</a></li>
+              <li><a href="/users/new" data-toggle="modal" data-target="/users/new">Register</a></li>
+				  <% end %>
+
+
+          <!--    < link_to session_path, method: :delete do >
                 <i class="glyphicon glyphicon-log-out"></i>
                 Log out
-              <% end %>
+              < end >
             </li>
-            <% else %>
+            < else >
             <li><a href="#" data-toggle="modal" data-target="#login-modal">Log in</a></li>
             <li><a href="/users/new" data-toggle="modal" data-target="/users/new">Register</a></li>
-            <% end %>
+            < end > -->
           </ul>
 
         </nav>
@@ -75,6 +93,8 @@
       < flash.each do |message_type, message| >
       <div class="alert alert-< message_type >">< message ></div>
       < end > -->
+
+      <%= render 'layouts/messages' %>
 
       <%= yield %>
       </div>
