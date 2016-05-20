@@ -1,4 +1,0 @@
-<%= form_for(current_user.invites.build(attended_event_id: @event.id)) do |f| %>
-  <div><%= f.hidden_field :attended_event_id %></div>
-  <%= f.submit "Attend", class: "btn btn-large btn-primary" %>
-<% end %>
