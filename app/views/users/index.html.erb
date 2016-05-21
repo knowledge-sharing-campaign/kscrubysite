@@ -131,27 +131,17 @@
 
   <div class="row upcoming-events">
     <h1 class="text-center">Upcoming Events</h1>
-    <div class="col-md-4 ">
-      <h2 class="eventxt well0"><br>KSC BATCH 3
-        INTERNSHIP
-        Hyderabad, India
-      </h2>
-      <a href="#" type="button" class="btn btn-primary">Read More</a>
-    </div>
-    <div class="col-md-4 ">
-      <h2 class="eventxt well1"><br>RubyOnRails
-        Summit, Hyderabad,India
-        2016</h2>
-      <a href="#" type="button" class="btn btn-primary">Read More</a>
-    </div>
-    <div class="col-md-4 ">
-      <h2 class="eventxt well2"><br>Extreme
-        Programming
-        2016
-        ThoughtWorks
-        Hyderabad</h2>
-      <a href="#" type="button" class="btn btn-primary">Read More</a>
-    </div>
+    <% @events.take(3).each do |event| %>
+      <div class="col-md-4 well0">
+        <h2 class="eventxt">
+          <%= event.title %>
+        </h2>
+        <p>
+          <%= truncate(event.description, length: 400) %>
+        </p>
+        <%= link_to 'Read More', event_path(event), class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
 </div>
 <div style="clear: both"></div>

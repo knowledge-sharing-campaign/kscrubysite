@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   has_scope :past
 	has_scope :upcoming
 
+  def index
+    @events = Event.all
+  end
+
   def new
   end
 
