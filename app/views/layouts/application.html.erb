@@ -53,14 +53,14 @@
             <% if(user_signed_in?) %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    						 <i class="fa fa-user"><%= current_user.username %></i>
+    						 <i class="fa fa-user"></i>
+                 <%= current_user.username %>
     						 <span class="caret"></span>
 					   </a>
              <ul class="dropdown-menu">
     							<li><a href="#">Settings</a></li>
     							<li><%= link_to "My Events", user_events_path %></li>
                   <li><%= link_to "Create Event", new_event_path %></li>
-                  <li>< link_to "Change Events", edit_event_path ></li>
     							<li class="divider"></li>
     							<li><%= link_to "About", statis_pages_about_path %></li>
     							<li><%= link_to "Log out", session_path, method: "delete" %></li>
