@@ -142,8 +142,6 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     nokogiri (1.6.7.2-x86-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
-    pg (0.18.4)
-    pg (0.18.4-x86-mingw32)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -264,7 +262,6 @@ DEPENDENCIES
   jquery-timepicker-rails
   jquery-ui-rails
   masonry-rails
-  pg
   pry
   rails (= 4.2.6)
   rails-footnotes
@@ -280,4 +277,4 @@ DEPENDENCIES
   will_paginate (~> 3.0.5)
 
 BUNDLED WITH
-   1.12.3
+   1.12.4

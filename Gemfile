@@ -66,7 +66,6 @@ gem "font-awesome-rails"
 
 gem 'jquery-timepicker-rails'
 gem 'has_scope'
-gem 'pg'
 
 
 gem 'will_paginate', '~> 3.0.5'
