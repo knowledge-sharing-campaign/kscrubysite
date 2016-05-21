@@ -1,19 +1,23 @@
+<div class="container">
+  <% provide(:title, "Events") %>
+  <div class="filter row">
+    <div class="col-sm-4 col-sm-offset-3">
+      <div class="btn-group btn-group-justified">
+        <%= link_to events_path(:upcoming => true), class: "btn btn-info btn-sm" do %>
+          Upcoming <span class="hidden-xs">Events</span>
+        <% end %>
+        <%= link_to events_path(:past => true), class: "btn btn-info btn-sm" do %>
+          Past <span class="hidden-xs">Events</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-<hr class="featurette-divider">
-<% provide(:title, "Events") %>
-<div class="filter row">
-	<div class="col-sm-4 col-sm-offset-3">
-		<div class="btn-group btn-group-justified">
-			<%= link_to "Upcoming Events", events_path(:upcoming => true), class: "btn btn-info btn-sm" %>
-			<%= link_to "Past Events", events_path(:past => true), class: "btn btn-info btn-sm" %>
-		</div>
-	</div>
-</div>
 
-
-<div class="event-index row">
-	<div class="col-sm-6 col-sm-offset-3">
-	<%= render 'events/event_box' %>
-	<%= will_paginate %>
-	</div>
+  <div class="event-index row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= render 'events/event_box' %>
+      <%= will_paginate %>
+    </div>
+  </div>
 </div>
