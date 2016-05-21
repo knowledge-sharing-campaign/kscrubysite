@@ -5,8 +5,6 @@ The KSC Main Site
 
 This is the repo for the code for the main knowledge sharing campaign website at http://knowledgesharingcampaign.org
 
-The backend has been designed for high scalability and performance for a large number of concurrent users and heavy loads.
-
 Tech Stack
 -------------
 > - HTML 5
@@ -22,7 +20,7 @@ Development requirements
 Running
 ----------
 > - Clone this repo using ``` git clone https://github.com/knowledge-sharing-campaign/kscrubysite ```
-> - Go inside the site folder using ``` cd site ```
+> - Go inside the site folder using ``` cd kscrubysite ```
 > - run ``` bundle install ```
 > - run ``` rake db:migrate ```
 > - run this for development (will use *3000* port by default)
