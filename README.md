@@ -26,7 +26,7 @@ Running
 > - run ``` bundle install ```
 > - run ``` rake db:migrate ```
 > - run this for development (will use *3000* port by default)
-    - rails -s
+    - rails s
 
 Developing
 --------------
