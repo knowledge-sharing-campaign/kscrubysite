@@ -10,16 +10,8 @@
 
       <% @user ||= User.new %>
 
-      <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "form field") %> needs your attention</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-          <li class="error-msg"><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
+
+      <%= render 'shared/error_messages', object: @user %>
 
       <div class="col-md-12">
       <%= form_for :user, url: '/users' do |f| %>

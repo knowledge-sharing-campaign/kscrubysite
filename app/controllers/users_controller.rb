@@ -14,7 +14,6 @@ class UsersController < ApplicationController
       login @user.id
       redirect_to dashboard_path(@user)
     else
-      flash[:danger] = 'You have not filled your details.'
       render :new
     end
   end
