@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="well well-lg">
+
+        <h2>Create a New Event</h2>
+        <%= form_for(@event) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form-control", autofocus: true %>
+
+          <%= f.label :description %>
+          <%= f.text_area :description, class: "form-control", :size => "20x5" %>
+
+          <%= f.label :location %>
+          <%= f.text_field :location, class: "form-control" %>
+
+          <div class="row">
+
+            <div class="col-sm-6">
+              <%= f.label "Date" %>
+              <div class="input-group date">
+                <%= f.text_field :date, class: "form-control" %><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <%= f.label "Start Time" %>
+              <div class="input-group">
+                <%= f.text_field :start_time, class: "time ui-timepicker-input form-control", placeholder: "15:00" %><span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <%= f.submit "Create event", class: "btn btn-success"%>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.input-group.date').datepicker({
+    format: "dd/mm/yyyy",
+    todayBtn: "linked",
+    autoclose: true
+  });
+  $('.time').timepicker({
+    'timeFormat':'H:i',
+    'scrollDefault': 'now'
+  });
+});
+</script>
