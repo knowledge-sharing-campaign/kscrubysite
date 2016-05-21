@@ -5,7 +5,6 @@
 
 			<h2>Create a New Event</h2>
 			<%= form_for(@event) do |f| %>
-				<%= render 'shared/error_messages', object: f.object %>
 
 				<%= f.label :title %>
 				<%= f.text_field :title, class: "form-control", autofocus: true %>

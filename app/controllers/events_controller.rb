@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_user, only: [:new, :create, :edit, :update, :destroy]
 
 	has_scope :upcoming
 	has_scope :past
