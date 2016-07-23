@@ -50,6 +50,7 @@ GEM
       will_paginate
     builder (3.2.2)
     byebug (9.0.0)
+    cancancan (1.15.0)
     chosen-rails (1.5.2)
       coffee-rails (>= 3.2)
       railties (>= 3.0)
@@ -248,6 +249,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap-will_paginate (~> 0.0.10)
   byebug
+  cancancan (~> 1.10)
   chosen-rails
   city-state
   coffee-rails (~> 4.1.0)

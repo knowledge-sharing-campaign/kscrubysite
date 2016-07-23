@@ -52,4 +52,8 @@ class User < ActiveRecord::Base
   validates :source, presence: { message: " - Please tick how did you get to know about KSC" }
 
   validates :date_of_birth, presence: {type: :date, format: 'dd-mm-yyyy'}
+
+  def admin?
+    role == "admin"
+  end
 end

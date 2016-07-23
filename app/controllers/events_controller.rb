@@ -20,10 +20,12 @@ class EventsController < ApplicationController
   def new
   	#@event = current_user.events.build
     @event = Event.new
+    authorize! :create, @event
   end
 
   def create
 		@event = current_user.events.new(event_params)
+    authorize! :create, @event
 		if @event.save
 			flash[:notice] = "Event Created"
 			redirect_to @event
@@ -34,10 +36,12 @@ class EventsController < ApplicationController
 
   def edit
 		@event = Event.find(params[:id])
+    authorize! :edit, @event
 	end
 
   def update
 		@event = Event.find(params[:id])
+    authorize! :edit, @event
 		if @event.update_attributes(event_params)
 			flash[:notice] = "Event updated"
 			redirect_to @event
@@ -47,7 +51,9 @@ class EventsController < ApplicationController
 	end
 
   def destroy
-		Event.find(params[:id]).destroy
+		@event = Event.find(params[:id])
+    authorize! :destroy, @event
+    @event.destroy
 		flash[:notice] = "Event Deleted"
     	redirect_to events_path
 	end

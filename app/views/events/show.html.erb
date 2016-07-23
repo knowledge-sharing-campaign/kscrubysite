@@ -37,9 +37,13 @@
 					<% end %>
 
 				<% end %>
-			<% elsif @event.host == current_user %>
-				<%= link_to "Edit Event", edit_event_path, class: "btn btn-primary" %>
-				<%= link_to "Delete event", @event, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-danger" %>
+      <% else %>
+        <% if can? :edit, @event %>
+          <%= link_to "Edit Event", edit_event_path, class: "btn btn-primary" %>
+        <% end %>
+        <% if can? :delete, @event %>
+          <%= link_to "Delete event", @event, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-danger" %>
+        <% end %>
 			<% end %>
 			</div>
 		</div>

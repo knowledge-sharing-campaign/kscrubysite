@@ -74,3 +74,4 @@ gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'coffee-script-source', '1.8.0'
 gem 'quiet_assets', group: :development
+gem 'cancancan', '~> 1.10'
