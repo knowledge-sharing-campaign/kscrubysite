@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.where('username = :e OR email = :e', e: params[:username]).first
-    if user && user.password == params[:password]
+    if user && user.authenticate(params[:password])
       login(user.id)
       redirect_to dashboard_path
     else

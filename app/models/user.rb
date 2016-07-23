@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :events, :foreign_key => "host_id", dependent: :destroy
 	has_many :invites, :foreign_key => "guest_id", dependent: :destroy
 	has_many :attended_events, through: :invites, dependent: :destroy
+  has_secure_password
 
 
   validates :terms_and_conditions, acceptance: true

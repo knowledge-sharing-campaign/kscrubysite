@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723102558) do
+ActiveRecord::Schema.define(version: 20160723105625) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "description"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20160723102558) do
     t.string   "last_name",         null: false
     t.string   "email",             null: false
     t.string   "username",          null: false
-    t.string   "password",          null: false
+    t.string   "password_digest",   null: false
     t.string   "contact_number"
     t.string   "gender"
     t.datetime "date_of_birth"

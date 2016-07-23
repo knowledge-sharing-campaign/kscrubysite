@@ -13,3 +13,8 @@ comment -> belongs_to topic
 RSVP
 ====
 On event show page, create a new invite with event_id as the event being shown and guest as the current_user
+
+Image Upload
+===========
+1. Cloudinary as image host
+2. http://cloudinary.com/documentation/rails_carrierwave
