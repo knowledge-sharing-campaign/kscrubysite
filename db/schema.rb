@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521041114) do
+ActiveRecord::Schema.define(version: 20160723094338) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "reply_to_id"
+  end
+
+  add_index "comments", ["reply_to_id"], name: "index_comments_on_reply_to_id"
+  add_index "comments", ["topic_id"], name: "index_comments_on_topic_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +43,22 @@ ActiveRecord::Schema.define(version: 20160521041114) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "views"
+    t.integer  "created_by_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "topics", ["created_by_id"], name: "index_topics_on_created_by_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",        null: false

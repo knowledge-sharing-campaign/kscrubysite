@@ -1,0 +1,11 @@
+Forum
+=====
+
+1. Topics
+2. Comments
+3. Tags
+
+topic -> has_many comments
+topic -> has_many tags
+
+comment -> belongs_to topic

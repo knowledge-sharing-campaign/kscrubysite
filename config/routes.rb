@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :topics do
+    resources :comments
+  end
+  resources :tags
   #get 'invites/create'
 
   #get 'invites/destroy'
