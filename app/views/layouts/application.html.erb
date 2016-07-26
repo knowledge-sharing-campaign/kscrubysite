@@ -60,7 +60,9 @@
              <ul class="dropdown-menu">
     							<li><a href="#">Settings</a></li>
     							<li><%= link_to "My Events", user_events_path %></li>
-                  <li><%= link_to "Create Event", new_event_path %></li>
+                  <% if can? :create, @event %>
+                      <li><%= link_to "Create Event", new_event_path %></li>
+                  <% end %>
     							<li class="divider"></li>
     							<li><%= link_to "About", statis_pages_about_path %></li>
     							<li><%= link_to "Log out", session_path, method: "delete" %></li>
