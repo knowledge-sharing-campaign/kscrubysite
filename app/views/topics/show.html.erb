@@ -15,6 +15,13 @@
   <%= @topic.created_by.full_name %>
 </p>
 
+<p>
+	<strong>Comment:</strong>
+	<%= @topic.comments %>
+		
+	end
+</p>
+
 <% if (user_signed_in?) %>
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <% end %>

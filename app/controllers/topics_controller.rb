@@ -19,8 +19,6 @@ class TopicsController < ApplicationController
   def new
     @topic = Topic.new
     @topic.comments.build
-
-    authorize! :create, @topic
   end
 
   # GET /topics/1/edit
@@ -32,8 +30,6 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     @topic.created_by = current_user
-
-    authorize! :create, @topic
 
     respond_to do |format|
       if @topic.save
@@ -51,8 +47,6 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
 
-      authorize! :edit, @topic
-
       if @topic.update(topic_params)
         format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
         format.json { render :show, status: :ok, location: @topic }
@@ -66,7 +60,6 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
-    authorize! :destroy, @topic
 
     @topic.destroy
     respond_to do |format|
