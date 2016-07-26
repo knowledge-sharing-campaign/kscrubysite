@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_user
+  # before_action :authorize_user
 
   # GET /topics
   # GET /topics.json
@@ -19,6 +19,8 @@ class TopicsController < ApplicationController
   def new
     @topic = Topic.new
     @topic.comments.build
+
+    authorize! :create, @topic
   end
 
   # GET /topics/1/edit
@@ -30,6 +32,8 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     @topic.created_by = current_user
+
+    authorize! :create, @topic
 
     respond_to do |format|
       if @topic.save
@@ -46,6 +50,9 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1.json
   def update
     respond_to do |format|
+
+      authorize! :edit, @topic
+
       if @topic.update(topic_params)
         format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
         format.json { render :show, status: :ok, location: @topic }
@@ -59,6 +66,8 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
+    authorize! :destroy, @topic
+
     @topic.destroy
     respond_to do |format|
       format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }

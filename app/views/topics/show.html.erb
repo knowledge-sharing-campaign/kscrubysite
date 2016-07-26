@@ -12,8 +12,10 @@
 
 <p>
   <strong>Created by:</strong>
-  <%= @topic.created_by %>
+  <%= @topic.created_by.full_name %>
 </p>
 
+<% if (user_signed_in?) %>
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
+<% end %>
 <%= link_to 'Back', topics_path %>

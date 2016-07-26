@@ -19,13 +19,16 @@
         <td><%= topic.views %></td>
         <td><%= topic.created_by.full_name %></td>
         <td><%= link_to 'Show', topic %></td>
+        <% if (user_signed_in?) %>
         <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
         <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if (user_signed_in?) %>
 <%= link_to 'New Topic', new_topic_path %>
+<% end %>
