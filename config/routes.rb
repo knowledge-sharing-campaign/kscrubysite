@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/contactus' => 'users#contactus'
   #get '/events' => 'users#events'
 
-  get '/forum' => 'users#forum'
+  get '/forum' => 'topics#index'
   get '/gallery' => 'users#gallery'
 
   get '/partners' => 'users#partners'
