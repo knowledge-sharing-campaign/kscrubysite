@@ -54,12 +54,12 @@ class User < ActiveRecord::Base
 
   validates :date_of_birth, presence: {type: :date, format: 'dd-mm-yyyy'}
 
-  def admin?
-    role == "admin"
-  end
-
   def full_name
     empStr = " "
     full_name = first_name + empStr + last_name
+  end
+
+  def admin?
+    role == "admin"
   end
 end

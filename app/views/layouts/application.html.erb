@@ -58,8 +58,11 @@
     						 <span class="caret"></span>
 					   </a>
              <ul class="dropdown-menu">
-    							<li><a href="#">Settings</a></li>
+                  <% if can? :manage, @user%>
+                      <li><a href="/admin"> Admin </a></li>
+                  <% end %>
     							<li><%= link_to "My Events", user_events_path %></li>
+                  <li><a href="#">Settings</a></li>
                   <% if can? :create, @event %>
                       <li><%= link_to "Create Event", new_event_path %></li>
                   <% end %>

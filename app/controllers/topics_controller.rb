@@ -45,14 +45,17 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
-    respond_to do |format|
+    if @topic.created_by == current_user
 
-      if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
-        format.json { render :show, status: :ok, location: @topic }
-      else
-        format.html { render :edit }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
+      respond_to do |format|
+
+        if @topic.update(topic_params)
+          format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+          format.json { render :show, status: :ok, location: @topic }
+        else
+          format.html { render :edit }
+          format.json { render json: @topic.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

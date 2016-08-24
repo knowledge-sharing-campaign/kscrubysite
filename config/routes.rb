@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user/admin'
+
   resources :topics do
     resources :comments
   end
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   #get 'events/controller'
 
   #get 'events/index'
+  get '/admin' => 'users#admin'
 
   get 'termscons' => 'users#termscons'
   get 'registersuccess' => 'users#registersuccess'
