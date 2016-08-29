@@ -39,6 +39,7 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.6)
       execjs
+    aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -59,6 +60,9 @@ GEM
     chunky_png (1.3.5)
     city-state (0.0.13)
       rubyzip (~> 1.1)
+    cloudinary (1.2.3)
+      aws_cf_signer
+      rest-client
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -96,6 +100,8 @@ GEM
     currencies (0.4.2)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    domain_name (0.5.20160615)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.1.1)
     dotenv-rails (2.1.1)
       dotenv (= 2.1.1)
@@ -111,6 +117,8 @@ GEM
     has_scope (0.7.0)
       actionpack (>= 4.1, < 5.1)
       activesupport (>= 4.1, < 5.1)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     i18n_data (0.7.0)
     jbuilder (2.4.1)
@@ -140,6 +148,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.12.0)
+    netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     nokogiri (1.6.7.2-x86-mingw32)
@@ -187,6 +196,10 @@ GEM
       json (~> 1.4)
     recaptcha (1.3.0)
       json
+    rest-client (2.0.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -233,6 +246,9 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     unicode_utils (1.4.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
@@ -254,6 +270,7 @@ DEPENDENCIES
   cancancan (~> 1.10)
   chosen-rails
   city-state
+  cloudinary
   coffee-rails (~> 4.1.0)
   coffee-script-source (= 1.8.0)
   compass-rails

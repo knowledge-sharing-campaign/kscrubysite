@@ -76,3 +76,4 @@ gem 'coffee-script-source', '1.8.0'
 gem 'quiet_assets', group: :development
 gem 'cancancan', '~> 1.10'
 gem 'bcrypt', '~> 3.1.7'
+gem 'cloudinary'
