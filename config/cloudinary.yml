@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: knowledgesharingcampaign
+  api_key: '797185614125327'
+  api_secret: R5wcg2rZcpm5hbSMEjFfNPgSKPA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: knowledgesharingcampaign
+  api_key: '797185614125327'
+  api_secret: R5wcg2rZcpm5hbSMEjFfNPgSKPA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: knowledgesharingcampaign
+  api_key: '797185614125327'
+  api_secret: R5wcg2rZcpm5hbSMEjFfNPgSKPA
+  enhance_image_tag: true
+  static_image_support: false
